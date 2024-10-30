@@ -1,1 +1,0 @@
-# artmake-yuka
