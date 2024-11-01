@@ -4,8 +4,8 @@
 </script> -->
 
 <template>
-  <div> 
-    <HeroSection />
+  <div>
+てすと
   </div>
 </template>
 

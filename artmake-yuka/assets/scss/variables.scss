@@ -45,6 +45,8 @@ $minViewport: 740;
   --fs-small : #{calcClamp(12, 14, $minViewport, $maxViewport)};
     // --fs-smaller           : #{calcClamp(11, 12, $minViewport, $maxViewport)};
     // --fs-max               : #{calcClamp(20, 28, $minViewport, $maxViewport)};
+  --fs-title            : #{calcClamp(54, 64, $minViewport, $maxViewport)};
+  --fs-catchphrase            : #{calcClamp(26, 36, $minViewport, $maxViewport)};
   --fs-button            : 16px;
   --line-height-tight    : 1.12;
   --line-height-narrow   : 1.4;

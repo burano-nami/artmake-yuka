@@ -1,11 +1,12 @@
+
 <!-- <script setup lang='ts'>
 
 
 </script> -->
 
 <template>
-  <div> 
-    <HeroSection />
+  <div>
+てすと
   </div>
 </template>
 
