@@ -16,12 +16,13 @@
           alt="イメージ画像"
         >
       </div>
+      <div :class="$style.title_contents">
+        <small :class="$style.catchphrase">「すっぴんでも美しく」</small>
+        <h1>医療アートメイク</h1>
+      </div>
     </div>
-    <div :class="$style.title_contents">
-      <small :class="$style.catchphrase">「すっぴんでも美しく」</small>
-      <h1>医療アートメイク</h1>
-    </div>
-    <SubHeroSection />
+    <IntroductionSection />
+    <ProfileSection />
   </div>
 </template>
 
@@ -31,13 +32,12 @@
   display        : flex;
   justify-content: center;
   align-items    : center;
-  padding: calc(var(--sp-medium) * 5);
-  /* padding-inline: calc(var(--sp-medium) * 2); */
+  margin: calc(var(--sp-medium) * 2);
+  position: relative;
 }
 
 .image {
   inline-size: 1200px;
-  block-size : 700px;
 
   img {
     inline-size: 100%;
@@ -49,6 +49,12 @@
   color: var(--black, #333);
   font-family: "Noto Serif JP";
   line-height: normal;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%);
+  padding: var(--sp-medium);
+
 
   .catchphrase {
     font-size: var(--fs-catchphrase);
@@ -60,6 +66,8 @@
     font-weight: 400;
   }
 }
+
+
 
 
 </style>

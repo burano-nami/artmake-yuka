@@ -4,12 +4,17 @@
 </script> -->
 
 <template>
-  <div>
-てすと
+  <div :class="$style.header">
+    ヘッダーです
   </div>
 </template>
 
 
-<!-- <style lang="scss" module>
+<style lang="scss" module>
+.header {
+  background-color: #333;
+  color: #fff;
+  block-size: 60px;
+}
 
-</style> -->
+</style>

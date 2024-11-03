@@ -11,8 +11,9 @@ body {
   min-height           : 100dvh;
   background-color     : var(--base-color);
   color                : var(--text-color);
-  font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif; 
+  font-family          : 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
   font-size            : var(--fs-medium);
+  font-weight          : 300;
   line-height          : var(--line-height-normal);
   letter-spacing       : var(--letter-spacing-normal);
   word-wrap            : break-word;
