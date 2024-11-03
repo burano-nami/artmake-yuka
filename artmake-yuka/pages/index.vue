@@ -6,6 +6,7 @@
 <template>
   <div> 
     <HeroSection />
+    <ArtmakeSection />
   </div>
 </template>
 

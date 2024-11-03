@@ -1,11 +1,9 @@
 
-$breakpoint: (
-  mobile : 'screen and (max-width: 500px)',
-  tablet : 'screen and (max-width: 780px)',
-  desktop: 'screen and (min-width: 900px)'
-);
-
-
+// $breakpoint: (
+//   mobile : 'screen and (max-width: 500px)',
+//   tablet : 'screen and (max-width: 780px)',
+//   desktop: 'screen and (min-width: 900px)'
+// );
 
 @mixin mediaScreen($bp) {
   @media #{map-get($breakpoint, $bp)} {
@@ -24,6 +22,18 @@ $breakpoint: (
 // @include mediaScreen('mobile') {
 //   ここにそれぞれの大きさでのCSS;
 // }
+
+@mixin mediaScreen($range) {
+  @if $range == 'smallDevice' {
+    @media all and (width <= 430px) { @content; }
+  } @else if $range == 'mobile' {
+    @media all and (width <= 739px) { @content; }
+  } @else if $range == 'tablet' {
+    @media all and (width <= 979px) { @content; }
+  } @else if $range == 'desktop' {
+    @media all and (980px <= width) { @content; }
+  }
+}
 
 
 
@@ -63,17 +73,6 @@ $breakpoint: (
   }
 }
 
-@mixin mediaScreen($range) {
-  @if $range == 'smallDevice' {
-    @media all and (width <= 430px) { @content; }
-  } @else if $range == 'mobile' {
-    @media all and (width <= 739px) { @content; }
-  } @else if $range == 'tablet' {
-    @media all and (width <= 979px) { @content; }
-  } @else if $range == 'desktop' {
-    @media all and (980px <= width) { @content; }
-  }
-}
 
 @mixin price() {
   display    : inline-flex;

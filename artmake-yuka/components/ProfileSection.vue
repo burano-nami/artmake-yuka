@@ -35,13 +35,18 @@
 
 
 <style lang="scss" module>
-.profile_container {
+@use '~/assets/scss/mixin' as *;
 
+.profile_container {
+  max-inline-size: var(--contents-lower-width);
 }
 
 .profile_image {
   inline-size: 250px;
-  block-size : 250px;
+
+  @include mediaScreen('mobile') {
+    inline-size: 170px;
+  }
 
   img {
     inline-size: 100%;
@@ -51,13 +56,30 @@
 
 .upper_section {
   display    : flex;
+  justify-content: center;
   align-items: center;
   gap        : var(--sp-large);
+  margin-block-end: var(--sp-large);
+
+  @include mediaScreen('mobile') {
+    flex-direction: column;
+  }
+}
+
+.profile_details {
+
+  small {
+    font-weight: 400;
+  }
 }
 
 .name {
   font-size: var(--fs-larger);
   font-weight: 300;
   margin-block-end: var(--sp-large);
+
+  @include mediaScreen('mobile') {
+    font-size: var(--fs-large);
+  }
 }
 </style>

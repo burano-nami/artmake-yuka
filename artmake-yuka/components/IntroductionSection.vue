@@ -1,52 +1,82 @@
-<!-- <script setup lang='ts'>
+<script setup lang='ts'>
+const listItems = [
+  'すっぴんだと眉がなくなる',
+  'スポートジムやプールで自信がもてない',
+  '汗をかいて眉が消える',
+  '細かいところが見えにくく眉を描きにくい',
+  '手が振るえて描きにくい',
+  '眉メイクが苦手',
+  'もともと左右差があり気になる',
+  '唇の血色が悪い、くすみが気になる、顔色が悪く見える'
+]
 
 
-</script> -->
+</script>
 
 <template>
   <div :class="$style.introduction_container"> 
     <p :class="$style.text">多くの女性が抱えるお悩み、<br>ぜひご相談下さい。</p>
     <ul :class="$style.list">
-      <li>すっぴんだと眉がなくなる</li>
-      <li>スポートジムやプールで自信がもてない</li>
-      <li>汗をかいて眉が消える</li>
-      <li>細かいところが見えにくく眉を描きにくい</li>
-      <li>手が振るえて描きにくい</li>
-      <li>眉メイクが苦手</li>
-      <li>もともと左右差があり気になる</li>
-      <li>唇の血色が悪い、くすみが気になる、顔色が悪く見える</li>
+      <li
+        v-for="item in listItems"
+        :key="item"
+      >
+        <!-- <span class="material-symbols-outlined">check</span> -->
+        {{ item }}
+      </li>
     </ul>
   </div>
 </template>
 
-<!-- ここに、サブヒーロの上部分と、プロフィール。
-で、ヒーローセクションで背景設置する。 -->
-
 
 <style lang="scss" module>
+@use '~/assets/scss/mixin' as *;
+
 .introduction_container {
+  max-inline-size : 1200px;
   display         : flex;
   justify-content : center;
   align-items     : center;
   gap             : var(--sp-larger);
   margin-inline   : calc(var(--sp-medium) * 2);
   background-color: beige;
+
+  @include mediaScreen('mobile') {
+    flex-direction: column-reverse;
+  }
 }
 
 .text {
   color      : var(--black);
   text-align : center;
-  font-size  : var(--fs-catchphrase);
+  font-size  : var(--fs-max );
   font-weight: 400;
+
+  @include mediaScreen('tablet') {
+    font-size: var(--fs-large);
+  }
 }
 
 .list {
-font-weight   : 400;
-display       : flex;
-width         : 376px;
-flex-direction: column;
-align-items   : flex-start;
-gap           : var(--sp-medium, 16px);
+  font-weight   : 400;
+  display       : flex;
+  flex-direction: column;
+  align-items   : flex-start;
+  gap           : var(--sp-medium, 16px);
+
+  li {
+    position: relative;
+    padding-inline-start : var(--sp-large); 
+
+    &::before {
+      content: 'check';
+      font-family: 'Material Symbols Outlined';
+      position: absolute;
+      left: 0;
+      font-size: var(--fs-medium); 
+      color: var(--dark-green);
+    }
+  }
 }
 
 </style>

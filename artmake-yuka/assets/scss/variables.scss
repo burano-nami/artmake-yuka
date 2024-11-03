@@ -1,12 +1,7 @@
 @use 'functions' as *;
 
-$maxViewport: 1440;
-$minViewport: 740;
-
-@use 'functions' as *;
-
-$maxViewport: 1440;
-$minViewport: 740;
+$maxViewport: 1200;
+$minViewport: 500;
 
 :root {
   // COLOR
@@ -29,24 +24,17 @@ $minViewport: 740;
   --button-primary-color  : linear-gradient(267deg, #FBEDD7 0%, #CEA77E 50%, #A16231 100%);
   --button-instagram-color: linear-gradient(267deg, #F58529 0%, #DD2A7B 33%, #8134AF 67%, #515BD4 100%);
   --button-line-color     : linear-gradient(267deg, #00C300 0%, #66E066 100%);                            // ボタンはとりあえず色だけ設定、細かいのまだ
-  // --shadow-color     : #846F74;
-  // --light-text-color : var(--light-black);
-  // --line-color       : var(--green);
-  // --hover-color      : var(--black);
-  // --box-shadow       : 0 0 4px 1px var(--shadow-color);
-  // --overlay-color    : #3e3e41cc;
-  // --pale-opacity     : .65;
-  // --transparent-color: #ffffff66;
   
   // FONT
-  --fs-medium: #{calcClamp(16, 18, $minViewport, $maxViewport)};
-  --fs-large : #{calcClamp(18, 20, $minViewport, $maxViewport)};
+  --fs-max               : #{calcClamp(24, 32, $minViewport, $maxViewport)};
   --fs-larger: #{calcClamp(22, 24, $minViewport, $maxViewport)};
+  --fs-large : #{calcClamp(18, 20, $minViewport, $maxViewport)};
+  --fs-medium: #{calcClamp(16, 18, $minViewport, $maxViewport)};
   --fs-small : #{calcClamp(12, 14, $minViewport, $maxViewport)};
     // --fs-smaller           : #{calcClamp(11, 12, $minViewport, $maxViewport)};
-    // --fs-max               : #{calcClamp(20, 28, $minViewport, $maxViewport)};
-  --fs-title            : #{calcClamp(38, 64, $minViewport, $maxViewport)};
-  --fs-catchphrase            : #{calcClamp(26, 36, $minViewport, $maxViewport)};
+  --fs-title            : #{calcClamp(34, 64, $minViewport, $maxViewport)};
+  --fs-catchphrase            : #{calcClamp(20, 36, $minViewport, $maxViewport)};
+  --fs-section-title            : #{calcClamp(80, 160, $minViewport, $maxViewport)};
   --fs-button            : 16px;
   --line-height-tight    : 1.12;
   --line-height-narrow   : 1.4;
@@ -67,8 +55,8 @@ $minViewport: 740;
   --silver-ratio         : 1.414 / 1;
   --mobile-lower-width   : 430px;
   --tablet-lower-width   : 740px;
-  --desktop-lower-width  : 980px;
-  --contents-max-width   : 1440px;
+  --contents-lower-width  : 840px;
+  --contents-max-width   : 1000px;
   --global-header-height : calc(var(--bv) * 8);
   --global-sub-nav-height: calc(var(--bv) * 6);
   --z-index-max          : 100;
