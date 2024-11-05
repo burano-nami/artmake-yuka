@@ -20,14 +20,16 @@
     </div>
 
     <!-- 真ん中の層 -->
-    <div :class="$style.motif_contents">
-      <div :class="[$style.motif, $style.motif1]">
-        <div :class="$style.motif_background" />
-        <span>お客様の希望</span>
-      </div>
-      <div :class="[$style.motif, $style.motif2]">
-        <div :class="[$style.motif_background, $style.gray]" />
-        <span>施術者の提案</span>
+    <div :class="$style.middle_container">
+      <div :class="$style.motif_contents">
+        <div :class="[$style.motif, $style.motif1]">
+          <div :class="$style.motif_background" />
+          <span>お客様の希望</span>
+        </div>
+        <div :class="[$style.motif, $style.motif2]">
+          <div :class="[$style.motif_background, $style.gray]" />
+          <span>施術者の提案</span>
+        </div>
       </div>
       <p :class="$style.motif_text">
         お客様のご希望を伺いながら、骨格や筋肉の状態を確認し、最適なデザインをご提案します。
@@ -62,19 +64,26 @@
 
 
 <style lang="scss" module>
+@use '~/assets/scss/mixin' as *;
 
 .artmake_container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-inline-size: var(--contents-max-width);;
+  max-inline-size: var(--contents-max-width);
 }
 
 .description {
   inline-size: var(--contents-lower-width);
+  margin-block-start: var(--sp-large);
+
+  @include mediaScreen('mobile') {
+    inline-size: 100%;
+  }
 }
 
 .image {
+  margin-block: calc(var(--sp-small) * 5);
 
   img {
     inline-size: 100%;
@@ -84,21 +93,28 @@
 
 
 /* 真ん中の層 */
-.motif_contents {
-  display              : grid;
-  grid-template-columns: 200px 200px 200px;
-  grid-template-rows   : 200px 200px 200px;
-  grid-template-areas  : 
-    "motif1  blank blank"
-    "blank motif2 blank"
-    "blank blank text";
+.middle_container {
+  display: grid;
+  grid-template-columns: 325px auto;
+  grid-template-rows: auto auto;
+  grid-template-areas: 
+    "motif blank1"
+    "blank2 text";
+  align-items: center;
+  gap: 20px;
+  inline-size: 100%;
 }
+
+.motif_contents {
+  grid-area: motif;
+  block-size: auto;
+}
+
 
 .motif {
   position       : relative;
-  /* inline-size    : 325px; */
-  /* block-size     : 325px; */
-  border-radius  : 50%;
+  inline-size    : 325px;
+  block-size     : 325px;
   display        : flex;
   align-items    : center;
   justify-content: center;
@@ -113,16 +129,21 @@
   }
 }
 
-  .motif1 {
-  grid-area: motif1;
+.motif1 {
+  top: 0; /* モチーフ1を上に配置 */
+  left: 0;
+  z-index: 1; /* 背面に配置 */
 }
 
 .motif2 {
-  grid-area: motif2;
+  top: -230px; /* モチーフ2を少し下に配置して重ねる */
+  left: 230px; /* 少し右にずらす */
+  z-index: 2; /* 前面に配置 */
 }
 
 .motif_background {
   position: absolute;
+  border-radius  : 50%;
   inline-size: 100%;
   block-size: 100%;
   background-color: var(--logo-green);
@@ -145,6 +166,10 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--sp-large,);
+
+  @include mediaScreen('mobile') {
+    grid-template-columns: 1fr;
+  }
 }
 
 .card {
