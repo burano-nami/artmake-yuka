@@ -1,13 +1,11 @@
 <script lang="ts" setup>
 const navItems = [
-  { name: 'アートメイクについて', path: '/' },
-  { name: '症例写真',path: '/news' },
-  { name: '施術の流れ', path: '/service' },
-  { name: 'メニュー/料金',path: '/works' },
-  { name: 'アクセス', path: '/company' },
-  { name: '注意点', path: '/contact' },
+  { name: 'アートメイクについて', path: '#artmake' },
+  { name: '症例写真', path: '#results' },
+  { name: '施術の流れ', path: '#process' },
+  { name: 'メニュー/料金', path: '#menu' },
+  { name: 'アクセス', path: '#access' },
 ]
-
 </script>
 
 <template>

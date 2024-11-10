@@ -23,7 +23,7 @@ const isHidden = ref(true);
     <div :class="$style.section_container">
       <slot />
     </div>
-    <!-- <SectionFooter /> -->
+    <div :class="$style.footer" />
   </main>
 </template>
 
@@ -45,5 +45,21 @@ const isHidden = ref(true);
   top        : 0;
   inline-size: 100%;
   z-index    : var(--z-index-header);
+}
+
+.footer {
+  inline-size: 100%;
+  block-size : 200px;
+  background : var(--logo-green);
+  margin-block-start: calc(var(--sp-larger) * 4);
+
+  &::before {
+    content         : '';
+    position        : absolute;
+    inline-size     : 100%;
+    block-size      : 20px;
+    background      : linear-gradient(274deg, #FBEDD7 6.24%, #CEA77E 48.5%, #A16231 89.93%);
+    background-color: pink;
+  }
 }
 </style>
