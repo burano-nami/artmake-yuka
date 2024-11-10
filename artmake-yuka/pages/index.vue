@@ -8,6 +8,9 @@
     <HeroSection />
     <ArtmakeSection />
     <ResultsSection />
+    <ProcessSection />
+    <MenuSection />
+    <AccessSection />
   </div>
 </template>
 

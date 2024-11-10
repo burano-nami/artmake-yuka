@@ -26,16 +26,16 @@ $minViewport: 500;
   --button-line-color     : linear-gradient(267deg, #00C300 0%, #66E066 100%);                            // ボタンはとりあえず色だけ設定、細かいのまだ
   
   // FONT
-  --fs-max               : #{calcClamp(24, 32, $minViewport, $maxViewport)};
+  --fs-max   : #{calcClamp(24, 32, $minViewport, $maxViewport)};
   --fs-larger: #{calcClamp(22, 24, $minViewport, $maxViewport)};
   --fs-large : #{calcClamp(18, 20, $minViewport, $maxViewport)};
   --fs-medium: #{calcClamp(16, 18, $minViewport, $maxViewport)};
   --fs-small : #{calcClamp(12, 14, $minViewport, $maxViewport)};
     // --fs-smaller           : #{calcClamp(11, 12, $minViewport, $maxViewport)};
-  --fs-title            : #{calcClamp(34, 64, $minViewport, $maxViewport)};
-  --fs-catchphrase            : #{calcClamp(20, 36, $minViewport, $maxViewport)};
-  --fs-section-title            : #{calcClamp(80, 160, $minViewport, $maxViewport)};
-  --fs-button            : 16px;
+  --fs-title             : #{calcClamp(34, 64, $minViewport, $maxViewport)};
+  --fs-catchphrase       : #{calcClamp(20, 36, $minViewport, $maxViewport)};
+  --fs-section-title     : #{calcClamp(80, 160, $minViewport, $maxViewport)};
+  --fs-button            : #{calcClamp(14, 16, $minViewport, $maxViewport)};;
   --line-height-tight    : 1.12;
   --line-height-narrow   : 1.4;
   --line-height-normal   : 1.6;

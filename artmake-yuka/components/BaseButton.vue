@@ -4,36 +4,38 @@ const props = defineProps<{
   backgroundColor: string;
 }>()
 
-
+// リンクさきを、インスタ、ラインもつけないといけない
 </script>
 
 <template>
-  <div>
+  <NuxtLink to="/reservation">
     <button
       :class="$style.button"
       :style="{ background: props.backgroundColor }"
     >
       {{ buttonText }}
     </button>
-  </div>
+  </NuxtLink>
 </template>
 
 
 <style lang="scss" module>
 .button {
+  inline-size: 300px;
   display        : flex;
   height         : 50px;
-  padding        : var(--sp-medium, 16px) 80px;
+  padding-block        : var(--sp-medium);
   justify-content: center;
   align-items    : center;
   border-radius  : 50px;
   opacity        : 0.8;
   color          : var(--white);
   font-family    : "Noto Sans JP";
-  font-size      : 16px;
+  font-size      : var(--fs-button);
   font-style     : normal;
-  font-weight    : 700;
+  font-weight    : 500;
   letter-spacing : var(--line-height-normal);
+  cursor: pointer;
 
   &:hover {
     opacity: 1;
