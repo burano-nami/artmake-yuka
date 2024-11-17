@@ -20,7 +20,7 @@ onMounted(() => {
   <div :class="$style.risks_container">
     <SectionTitle
       title="Risks"
-      jaTitle="Risks"
+      jaTitle="リスクと副作用等"
     />
       <div :class="$style.risks_contents">
         <div :class="$style.tab_button_wrap">
@@ -58,7 +58,6 @@ onMounted(() => {
 .risks_container {
   max-inline-size: var(--contents-max-width);
   inline-size: 100%;       
-  /* height          : 100%; */
   position        : relative;
 }
 
@@ -66,27 +65,33 @@ onMounted(() => {
   max-width     : var(--section-max-width);
   margin-inline : auto;
   padding-inline: var(--sp-large);
-  padding-block : var(--sp-large);
   margin-bottom : var(--decoration-height);
+  margin-block: var(--sp-larger);
 }
 
 .tab_button_wrap {
   display        : flex;
   justify-content: space-between;
-  gap            : var(--sp-medium);
-  margin-block   : var(--sp-);
-  padding-block  : var(--sp-medium);
+  gap            : var(--sp-min);
+  padding-block-start  : var(--sp-medium);
 }
 
 .tab_button {
-  width         : 100%;
-  font-weight   : normal;
-  border-radius : 0px;
-  padding-bottom: var(--sp-medium);
-  color         : var(--black);
+  width        : 100%;
+  font-weight  : normal;
+  border-radius: 0px;
+  padding-block: var(--sp-medium);
+  color        : var(--black);
+  border-radius: 10px 10px 0px 0px;
+  background   : var(--pale-green);
+  cursor       : pointer;
 
   &.active {
-    border-bottom: solid 2px var(--black);
+    background   : var(--white);
+    border-radius: 10px 10px 0px 0px;
+    border-top   : 5px solid var(--pale-green);
+    border-right : 5px solid var(--pale-green);
+    border-left  : 5px solid var(--pale-green);
     font-weight  : bold;
   }
 }

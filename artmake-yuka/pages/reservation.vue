@@ -7,6 +7,9 @@
   <div :class="$style.main_container"> 
     ご予約に際して、必ず下記の内容をご確認ください。
     <SectionRisks />
+    <SectionPrecautions />
+    <SectionPolicy />
+    <SectionBooking />
   </div>
 </template>
 

@@ -20,10 +20,13 @@ const props = defineProps<{
 
 
 <style lang="scss" module>
+@use '~/assets/scss/mixin' as *;
+
+
 .button {
   inline-size: 300px;
+  block-size         : 50px;
   display        : flex;
-  height         : 50px;
   padding-block        : var(--sp-medium);
   justify-content: center;
   align-items    : center;
@@ -39,6 +42,11 @@ const props = defineProps<{
 
   &:hover {
     opacity: 1;
+  }
+
+  @include mediaScreen('mobile') {
+    inline-size: 220px;
+    block-size         :  40px;
   }
 }
 

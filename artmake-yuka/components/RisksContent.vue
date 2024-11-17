@@ -1,26 +1,21 @@
 <script setup lang="ts">
 
-const restrictionsList = [
-  '感染症をお持ちの方',
-  'ケロイド体質の方',
-  'アレルギーをお持ちの方、または体質の方',
-  'アトピー肌の方',
-  'ステロイド内服中の方',
-  '抗血小板薬を内服されている方',
-  '妊娠中または妊娠の可能性のある方',
-  '授乳中の方（施術当日は授乳をお控え頂いております）',
-  '唇にヒアルロン酸が多量に入っている方',
-  'くすみが一定水準より濃い方',
-  'ご不安が強く、施術や定着に何らかの影響を及ぼす恐れがある方',
-  '基礎疾患をお持ちの方',
-  '飲酒をされている方、または当日飲酒予定の方',
-  'その他、医師または看護師が施術困難と判断しㅤた場合',
-  '過去に他院にてアートメイクをされている方はㅤ必ずご相談ください。',
-  
-]
-
-const restrictions = [
-  '以上の内容をご確認の上ご相談ください。申告がない場合や虚偽の申告があった場合は施術いたしかねますのでご了承ください。また、かかりつけ医師がいらっしゃる場合は主治医の許可が必要です。',
+const restrictionsLists = [
+  '・感染症をお持ちの方',
+  '・ケロイド体質の方',
+  '・アレルギーをお持ちの方、または体質の方',
+  '・アトピー肌の方',
+  '・ステロイド内服中の方',
+  '・抗血小板薬を内服されている方',
+  '・妊娠中または妊娠の可能性のある方',
+  '・授乳中の方（施術当日は授乳をお控え頂いております）',
+  '・唇にヒアルロン酸が多量に入っている方',
+  '・くすみが一定水準より濃い方',
+  '・ご不安が強く、施術や定着に何らかの影響を及ぼす恐れがある方',
+  '・基礎疾患をお持ちの方',
+  '・飲酒をされている方、または当日飲酒予定の方',
+  '・その他、医師または看護師が施術困難と判断しㅤた場合',
+  '・過去に他院にてアートメイクをされている方はㅤ必ずご相談ください。',
 ]
 
 const risks = [
@@ -42,34 +37,45 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div :class="$style.card_wrapper">
+  <div :class="$style.wrapper">
     <div 
-      v-for="trainer in trainers"
-      :key="trainer.text"
-      :class="$style.trainer_card"
+      :class="$style.text_contents"
       v-show="selectedTab === 'restrictions'"
     >
-      <p>{{ trainer.text }}</p>
+      <div :class="$style.list">
+        <ul>
+          <li 
+            v-for="restrictionsList in restrictionsLists"
+            :key="restrictionsList"
+          >
+            {{ restrictionsList }}
+          </li>
+        </ul>
+        <p>
+          以上の内容をご確認の上ご相談ください。申告がない場合や虚偽の申告があった場合は施術いたしかねますの
+          でご了承ください。また、かかりつけ医師がいらっしゃる場合は主治医の許可が必要です。
+        </p>
+      </div>
     </div>
   </div>
-  <div :class="$style.card_wrapper">
+  <div :class="$style.wrapper">
     <div 
-      v-for="staff in staffs"
-      :key="staff.text"
-      :class="$style.trainer_card"
+      v-for="risk in risks"
+      :key="risk"
+      :class="$style.text_contents"
       v-show="selectedTab === 'risks'"
     >
-      <p>{{ staff.text }}</p>
+      <p>{{ risk }}</p>
     </div>
   </div>
-  <div :class="$style.card_wrapper">
+  <div :class="$style.wrapper">
     <div 
-      v-for="trainer in trainers"
-      :key="trainer.text"
-      :class="$style.trainer_card"
+      v-for="mriInfo in mriInfo"
+      :key="mriInfo"
+      :class="$style.text_contents"
       v-show="selectedTab === 'mriInfo'"
     >
-      <p>{{ trainer.text }}</p>
+      <p>{{ mriInfo }}</p>
     </div>
   </div>
 </template> 
@@ -78,41 +84,41 @@ const props = defineProps<{
 <style lang = "scss" module>
 @use '~/assets/scss/mixin' as *;
 
-.card_wrapper {
+.wrapper {
   display              : grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap                  : var(--sp-medium);
+  grid-template-columns: 1fr;
+
 
   @include mediaScreen('mobile') {
     grid-template-columns: 1fr;
   }
 }
 
-.trainer_card {
+.text_contents {
   background-color: var(--white);
-  border-radius   : 1rem;
-  animation            : fade-in 0.8s ease forwards;
-  transform            : translateY(0px);
-
-  > img {
-    width                  : 100%;
-    border-top-left-radius : 1rem;
-    border-top-right-radius: 1rem;
-  }
+  border-right    : 5px solid var(--pale-green);
+  border-bottom   : 5px solid var(--pale-green);
+  border-left     : 5px solid var(--pale-green);
 
   > p {
-    padding: var(--sp-medium);
+    padding  : var(--sp-medium);
+    animation: tabAnime 0.3s ease-in-out;
   }
 }
 
-@keyframes fade-in {
-  from {
-    opacity  : 0;
-    transform: translateY(50px);
-  }
-  to {
-    opacity  : 1;
-    transform: translateY(0);
-  }
+.list {
+  display        : flex;
+  flex-direction : column;
+  align-items    : center;
+  justify-content: center;
+  padding-block  : var(--sp-large);
+  padding-inline : var(--sp-medium);
+  gap            : var(--sp-large);
+  animation      : tabAnime 0.3s ease-in-out;
+}
+
+@keyframes tabAnime{
+  0%{opacity:0;}
+  100%{opacity:1;}
 }
 </style>

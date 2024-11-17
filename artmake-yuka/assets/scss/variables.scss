@@ -27,6 +27,7 @@ $minViewport: 500;
   
   // FONT
   --fs-max   : #{calcClamp(24, 32, $minViewport, $maxViewport)};
+  --fs-semi-max: #{calcClamp(22, 26, $minViewport, $maxViewport)};
   --fs-larger: #{calcClamp(22, 24, $minViewport, $maxViewport)};
   --fs-large : #{calcClamp(18, 20, $minViewport, $maxViewport)};
   --fs-medium: #{calcClamp(16, 18, $minViewport, $maxViewport)};
@@ -55,6 +56,7 @@ $minViewport: 500;
   --silver-ratio         : 1.414 / 1;
   --mobile-lower-width   : 430px;
   --tablet-lower-width   : 740px;
+  --desktop-max-width  : 1440px;
   --contents-lower-width  : 840px;
   --contents-max-width   : 1000px;
   --global-header-height : calc(var(--bv) * 8);
