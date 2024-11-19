@@ -16,7 +16,20 @@
     </p>
     <BookingUpper />
     <BookingForm />
-
+    <div :class="$style.submit_wrapper">
+      <p :class="$style.description">
+        施術にあたっての注意点、施術前後の注意点、キャンセルポリシーをご確認の上、
+        ご納得いただいた方のみの施術となります。必ずご一読いただき、同意をおねがいします。
+      </p>
+      <label>
+        <input type="checkbox" required>
+        すべての内容を確認し、同意いたしました。
+      </label>
+      <BaseButton
+        buttonText="送信"
+        backgroundColor="var(--button-primary-color)"
+      />
+    </div>
   </div>
 </template>
 
@@ -29,6 +42,7 @@
   flex-direction : column;
   align-items    : center;
   max-inline-size: var(--contents-max-width);
+  inline-size: 100%;
 }
 
 .description {
@@ -40,5 +54,12 @@
   }
 }
 
+.submit_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-large);
+  margin-block-start: var(--sp-large);
+}
 
 </style>

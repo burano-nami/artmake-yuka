@@ -96,18 +96,18 @@ const afterOpen = () => {
 }
 
 .accordion {
-  inline-size: min(100%, var(--contents-max-width));
-  margin-block-start   : calc(var(--sp-larger) * -2.5);
-  margin-inline-end: calc(var(--sp-larger) * 4);
+  inline-size       : min(100%, var(--contents-max-width));
+  margin-block-start: calc(var(--sp-larger) * -2.5);
+  margin-inline-end : calc(var(--sp-larger) * 4);
 
   @include mediaScreen('desktop') {
     margin-inline-end: 0px;
   }
 
   @include mediaScreen('tablet') {
-    margin-inline-end: 0px;
-    margin-block-start   : calc(var(--sp-larger) * -1);
-    padding-inline: var(--sp-medium);
+    margin-inline-end : 0px;
+    margin-block-start: calc(var(--sp-larger) * -1);
+    padding-inline    : var(--sp-medium);
   }
 }
 
@@ -115,7 +115,7 @@ const afterOpen = () => {
   align-items: flex-start;
 
   .accordion {
-    margin-inline-end: 0;
+    margin-inline-end  : 0;
     margin-inline-start: calc(var(--sp-larger) * 4);
 
     @include mediaScreen('desktop') {
@@ -124,8 +124,8 @@ const afterOpen = () => {
 
     @include mediaScreen('tablet') {
       margin-inline-start: 0px;
-      margin-block-start   : calc(var(--sp-larger) * -1);
-      padding-inline: var(--sp-medium);
+      margin-block-start : calc(var(--sp-larger) * -1);
+      padding-inline     : var(--sp-medium);
     }
   }
 }
@@ -167,24 +167,37 @@ const afterOpen = () => {
     }
 
   .accordion_content {
-    max-block-size: 100%; 
-    opacity   : 1;
+    max-block-size  : 100%;
+    opacity         : 1;
     background-color: var(--white);
+    animation: slideDown 0.3s forwards;
   }
 }
 
 .accordion_content {
-  overflow  : hidden;                                  
+  overflow  : hidden;
   transition: max-height 0.5s ease, opacity 0.5s ease;
   max-height: 0;
   opacity   : 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
 
   > p {
-    border-right    : 5px solid var(--pale-green);
-    border-bottom   : 5px solid var(--pale-green);
-    border-left     : 5px solid var(--pale-green);
-    padding         : var(--sp-medium);
-    transition      : transform 0.5s, opacity 0.5s;
+    border-right : 5px solid var(--pale-green);
+    border-bottom: 5px solid var(--pale-green);
+    border-left  : 5px solid var(--pale-green);
+    padding      : var(--sp-medium);
+    transition   : transform 0.5s, opacity 0.5s;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    max-height: 100%; /* 適切な最大値を指定 */
+    opacity: 1;
   }
 }
 </style>

@@ -1,4 +1,23 @@
 <script setup lang="ts">
+const policies = [
+  {
+    title: '延期料',
+    items: [
+      { text: '3日前までにご変更完了', value: '無料' },
+      { text: '3日前〜前日までの変更完了', value: '施術料金の30%' },
+      { text: '当日の変更', value: '100%' },
+    ],
+  },
+  {
+    title: 'キャンセル料',
+    items: [
+      { text: '7日前まで', value: '無料' },
+      { text: '前日〜6日前', value: '施術料金の30%' },
+      { text: '当日のキャンセルまたは無断キャンセル', value: '施術料金の100%' },
+      { text: '来院後に相談の上施術前にキャンセル', value: '対面カウンセリング代 ¥3,000' },
+    ],
+  },
+]
 
 
 </script>
@@ -13,41 +32,22 @@
       理由に関わらず、キャンセルや延期等にはキャンセル料が発生いたします。
     </p>
     <div :class="$style.pricing_container">
-      <div :class="$style.section">
-        <div :class="$style.section_title">延期料</div>
-        <div :class="$style.table">
-          <div :class="$style.title">
-            <div :class="$style.text">3日前までにご変更完了</div>
-            <div :class="$style.text">3日前〜前日までの変更完了</div>
-            <div :class="$style.text">当日の変更</div>
-
+      <div
+        v-for="(section, index) in policies"
+        :key="index"
+        :class="$style.section"
+      >
+        <div :class="$style.section_title">{{ section.title }}</div>
+        <template v-if="section.items">
+          <div
+            v-for="(item, i) in section.items"
+            :key="i"
+            :class="$style.table"
+          >
+            <div :class="$style.text">{{ item.text }}</div>
+            <div :class="$style.text2">{{ item.value }}</div>
           </div>
-          <div :class="$style.answer">
-            <div :class="$style.text2">無料</div>
-            <div :class="$style.text2">施術料金の30%</div>
-            <div :class="$style.text2">100%</div>
-          </div>
-        </div>
-      </div>
-
-      <div :class="$style.section">
-        <div :class="$style.section_title">キャンセル料</div>
-        <div :class="$style.table">
-          <div :class="$style.title">
-            <div :class="$style.text">7日前まで</div>
-            <div :class="$style.text">前日〜6日前</div>
-            <div :class="$style.text">当日のキャンセルまたは無断キャンセル</div>
-            <div :class="$style.text">来院後に相談の上施術前にキャンセル</div>
-          </div>
-
-          <div :class="$style.answer">
-            <div :class="$style.text2">無料</div>
-            <div :class="$style.text2">施術料金の30%</div>
-            <div :class="$style.text2">施術料金の100%</div>
-            <div :class="$style.text2">対面カウンセリング代 ¥3,000</div>
-          </div>
-        </div>
-
+        </template>
       </div>
       <div :class="$style.section">
         <div :class="$style.section_title">遅刻された場合</div>
@@ -69,9 +69,9 @@
 }
 
 .description {
-  inline-size: var(--contents-lower-width);
+  inline-size       : var(--contents-lower-width);
   margin-block-start: var(--sp-large);
-  text-align: center;
+  text-align        : center;
 
   @include mediaScreen('mobile') {
     inline-size: 100%;
@@ -79,42 +79,52 @@
 }
 
 .pricing_container {
-  width: 100%;
+  inline-size : 100%;
   margin-block: var(--sp-larger);
-  position: relative;
+  position    : relative;
 
 }
 
-/* 各セクション */
+  /* 各セクション */
 .section {
   margin-bottom: 20px;
 }
 
-/* セクションタイトル */
+  /* セクションタイトル */
 .section_title {
-  background-color: #A0C9A7;
-  font-size: var(--fs-large);
-  color: #fff;
-  font-weight: bold;
-  padding: calc(var(--sp-small) *1.5);
+  background-color    : #A0C9A7;
+  font-size           : var(--fs-large);
+  color               : #fff;
+  font-weight         : bold;
+  padding             : calc(var(--sp-small) *1.5);
   padding-inline-start: calc(var(--sp-large) * 1.8) ;
 }
 
 /* テーブルスタイル */
 .table {
-  /* display: table; */
   display: grid;
   grid-template-columns: auto 30%;
-}
 
-.title {
-  /* display: table-row; */
-  display: flex;
-  flex-direction: column;
+  @include mediaScreen('mobile') {
+    grid-template-columns: 1fr;
+    margin-block : var(--sp-medium);
+    /* border-bottom: 1px solid var(--light-gray); */
+  }
 }
 
 .text, .text2, .notice { 
-  padding: calc(var(--sp-small) *1.5);
+  padding: calc(var(--sp-small) * 1.5);
+
+  @include mediaScreen('mobile') {
+    padding-block : 0;
+  }
+}
+
+.notice {
+
+  @include mediaScreen('mobile') {
+    padding-block : calc(var(--sp-small) * 1.5);
+  }
 }
 
 </style>
