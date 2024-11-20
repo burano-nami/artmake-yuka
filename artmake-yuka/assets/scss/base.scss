@@ -98,14 +98,14 @@ select {
   color           : var(--text-color);
   line-height     : var(--line-height-normal);
   letter-spacing  : var(--letter-spacing-normal);
-  appearance      : none;
+  appearance      : auto;
 
   &:focus {
     outline: none;
   }
 
   &::placeholder {
-    color: var(--disable-text-color);
+    color: #d9d9d9;
   }
 
   &[type="date"] {
