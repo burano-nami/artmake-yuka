@@ -32,8 +32,8 @@ onBeforeUnmount(() => {
       </div>
     </div>
     <div :class="$style.sub_hero">
-      <IntroductionSection />
-      <ProfileSection />
+      <SectionIntroduction />
+      <SectionProfile />
     </div>
   </div>
 </template>

@@ -15,20 +15,35 @@
       ご利用の方は、下記の予約フォームからご連絡ください。
     </p>
     <BookingUpper />
-    <BookingForm />
-    <div :class="$style.submit_wrapper">
-      <p :class="$style.description">
-        施術にあたっての注意点、施術前後の注意点、キャンセルポリシーをご確認の上、
-        ご納得いただいた方のみの施術となります。必ずご一読いただき、同意をおねがいします。
-      </p>
-      <label>
-        <input type="checkbox" required>
-        すべての内容を確認し、同意いたしました。
-      </label>
-      <BaseButton
-        buttonText="送信"
-        backgroundColor="var(--button-primary-color)"
-      />
+    <!-- フォーム移植中 -->
+    <div :class="$style.booking_form_container">
+      <p :class="$style.text">LINEをご利用でない方はこちら</p>
+      <form
+        :class="$style.form_container"
+        method="post"
+        action="https://hyperform.jp/api/waZVnU3d"
+      >
+        <InputNameGroup />
+        <InputBirthAndAgeGroup />
+        <InputAddressGroup />
+        <InputContactGroup />
+        <InputQuestionsGroup />
+        <div :class="$style.submit_wrapper">
+          <p :class="$style.description_booking">
+            施術にあたっての注意点、施術前後の注意点、キャンセルポリシーをご確認の上、<br :class="$style.mobile_hidden">
+            ご納得いただいた方のみの施術となります。必ずご一読いただき、同意をおねがいします。
+          </p>
+          <label>
+            <input type="checkbox" required>
+            すべての内容を確認し、同意いたしました。
+          </label>
+          <BaseButton
+          type="submit"
+          buttonText="送信"
+          backgroundColor="var(--button-primary-color)"
+          />
+        </div>
+      </form>
     </div>
   </div>
 </template>
@@ -54,12 +69,51 @@
   }
 }
 
+.description_booking {
+  inline-size       : var(--contents-lower-width);
+  margin-block-start: var(--sp-large);
+  text-align: center;
+
+  @include mediaScreen('mobile') {
+    inline-size: 100%;
+    text-align: left;
+  }
+}
+
+.mobile_hidden {
+  @include mediaScreen('mobile') {
+    display: none;
+  }
+}
+
 .submit_wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: var(--sp-large);
   margin-block-start: var(--sp-large);
+}
+
+.booking_form_container {
+  display        : flex;
+  flex-direction : column;
+  align-items    : center;
+  max-inline-size: var(--contents-max-width);
+  inline-size: 100%;
+}
+
+.text {
+  color      : var(--black);
+  text-align : center;
+  font-size  : var(--fs-larger);
+  font-weight: 500;
+}
+
+  /* ここからフォーム */
+.form_container {
+  inline-size: 100%;
+  margin-block-start: var(--sp-large);
+  gap               : var(--sp-medium);
 }
 
 </style>
