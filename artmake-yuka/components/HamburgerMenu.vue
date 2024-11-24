@@ -1,11 +1,10 @@
 <script lang="ts" setup>
 const navItems = [
-  { name: 'アートメイクについて', path: '/' },
-  { name: '症例写真',path: '/news' },
-  { name: '施術の流れ', path: '/service' },
-  { name: 'メニュー/料金',path: '/works' },
-  { name: 'アクセス', path: '/company' },
-  { name: '注意点', path: '/contact' },
+{ name: 'アートメイクについて', path: '/#artmake' },
+  { name: '症例写真', path: '/#results' },
+  { name: '施術の流れ', path: '/#process' },
+  { name: 'メニュー/料金', path: '/#menu' },
+  { name: 'アクセス', path: '/#access' },
 ]
 
 const isActive = ref(false)
@@ -23,6 +22,7 @@ const isActive = ref(false)
         <li
           v-for="item in navItems.filter(item => item.name !== 'HOME')"
           :key="item.name"
+          @click="isActive = false"
         >
           <NuxtLink :to="item.path">
             {{ item.name }}
@@ -30,9 +30,10 @@ const isActive = ref(false)
         </li>
       </ul>
       <BaseButton
-          buttonText="ご予約はこちらから"
-          backgroundColor="var(--button-primary-color)"
-        />
+        buttonType="button"
+        buttonText="ご予約はこちらから"
+        backgroundColor="var(--button-primary-color)"
+      />
     </div>
   </div>
     <div
@@ -48,39 +49,39 @@ const isActive = ref(false)
 <style lang="scss" module>
 @use '~/assets/scss/mixin' as *;
 
+
 .menu_list {
+  display         : flex;
   inline-size     : 100%;
   block-size      : 100svh;
   color           : var(--black);
   background-color: var(--white);
   font-weight     : 400;
-  display         : none;
   justify-content : center;
   align-items     : center;
   text-align      : center;
   opacity         : 0;
-  transition      : all 0.3s ease-in-out;
+  transition      : opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
   position        : fixed;
   top             : 0;
-  visibility      : hidden;
   z-index         : var(--z-index-overlay);
+  pointer-events  : none;
 
   &.active {
-    display   : flex;
-    opacity   : 1;
-    visibility: visible;
-  }
-
-  li {
-    margin-block-end: calc(var(--sp-medium) * 1.5);
+    opacity       : 1;
+    pointer-events: all;
   }
 }
 
 .contents_inner {
-  display: flex;
+  display       : flex;
   flex-direction: column;
-  align-items: center;
-  gap: var(--sp-larger);
+  align-items   : center;
+  gap           : var(--sp-larger);
+
+  li {
+    margin-block: var(--sp-medium);
+  }
 }
 
 .logo {

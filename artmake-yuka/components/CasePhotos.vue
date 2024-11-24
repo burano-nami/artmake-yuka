@@ -17,8 +17,8 @@
     </div>
 
     <div :class="[$style.results_contents, $style.contents_right]">
-      <div :class="$style.title_right">
-        <p :class="$style.service_right">手彫り眉<br>アイブロー</p>
+      <div :class="$style.title">
+        <p :class="$style.service">手彫り眉<br>アイブロー</p>
         <p :class="$style.age_gender">30代/女性</p>
       </div>
       <div :class="$style.image">
@@ -37,8 +37,8 @@
     </div>
 
     <div :class="[$style.results_contents, $style.contents_right]">
-      <div :class="$style.title_right">
-        <p :class="$style.service_right">リップ</p>
+      <div :class="$style.title">
+        <p :class="$style.service">リップ</p>
         <p :class="$style.age_gender">30代/女性</p>
       </div>
       <div :class="$style.image">
@@ -54,76 +54,78 @@
 @use '~/assets/scss/mixin' as *;
 
 .results_container {
-  inline-size: 100%;
-  display: grid;
+  inline-size          : fit-content;
+  display              : grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--sp-large);
+  gap                  : var(--sp-large);
 
-  /* タブレットサイズで1列レイアウトに切り替え */
   @include mediaScreen('tablet') {
+    gap                  : var(--sp-medium);
+  }
+
+  @include mediaScreen('mobile') {
     grid-template-columns: 1fr;
   }
 }
 
+.results_contents {
+  inline-size          : fit-content;
+  display              : grid;
+  gap                  : var(--sp-small);
+  grid-template-columns: 1fr 380px; 
+  grid-template-areas  : "title image";
+
+  &:nth-child(even) {
+    grid-template-columns: 380px 1fr; 
+    grid-template-areas: "image title";
+  }
+
+  @include mediaScreen('tablet') {
+    inline-size          : 100%;
+    grid-template-columns: 1fr 300px;
+
+    &:nth-child(even) {
+      grid-template-columns: 300px 1fr; 
+    }
+  }
+
+  @include mediaScreen('mobile') {
+    inline-size          : 100%;
+    grid-template-columns: 1fr 240px;
+
+    &:nth-child(even) {
+      grid-template-areas: "title image";
+      grid-template-columns: 1fr 240px;
+    }
+  }
+}
+
 .title {
-  display: flex;
+  inline-size   : 100%;
+  display       : flex;
   flex-direction: column;
-  align-items: flex-end;
-  gap: var(--sp-small);
-  
+  gap           : var(--sp-small);
+  grid-area     : title;
+
   .service {
-    font-size: var(--fs-large);
+    font-size  : var(--fs-medium);
     font-weight: 500;
-    text-align: right;
   }
 
   .age_gender {
-    font-size: var(--fs-small);
+    font-size  : var(--fs-small);
     font-weight: 300;
   }
 }
 
-.title_right {
-  align-items: flex-start;
-
-  .service_right {
-    font-size: var(--fs-large);
-    font-weight: 500;
-    text-align: left;
-  }
-}
-
 .image {
-  inline-size: 380px;
-  aspect-ratio: 1 / 1;
+  max-inline-size: 380px;
+  inline-size    : 100%;
+  aspect-ratio   : 1 / 1;
+  grid-area      : image;
 
   img {
     inline-size: 100%;
   }
 }
-
-.results_contents {
-  display: grid;
-  grid-template-columns: 21% auto;
-  gap: calc(var(--sp-medium) * 1.5);
-  @include mediaScreen('desktop') {
-
-    /* 偶数番目の要素に対して順番を入れ替える */
-    &:nth-child(even) {
-      grid-template-columns: auto 21%; /* 偶数番目は写真を左、タイトルを右に配置 */
-      grid-auto-flow: column;  /* 偶数番目は写真を左、タイトルを右に配置 */
-
-      .title {
-        grid-column: 2; /* タイトルを右側に配置 */
-      }
-
-      .image {
-        grid-column: 1; /* 画像を左側に配置 */
-      }
-    }
-  }
-}
-
-
-
 </style>

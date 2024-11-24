@@ -38,9 +38,9 @@
             すべての内容を確認し、同意いたしました。
           </label>
           <BaseButton
-          type="submit"
-          buttonText="送信"
-          backgroundColor="var(--button-primary-color)"
+            buttonType="submit"
+            buttonText="送信"
+            backgroundColor="var(--button-primary-color)"
           />
         </div>
       </form>

@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 const navItems = [
-  { name: 'アートメイクについて', path: '#artmake' },
-  { name: '症例写真', path: '#results' },
-  { name: '施術の流れ', path: '#process' },
-  { name: 'メニュー/料金', path: '#menu' },
-  { name: 'アクセス', path: '#access' },
+  { name: 'アートメイクについて', path: '/#artmake' },
+  { name: '症例写真', path: '/#results' },
+  { name: '施術の流れ', path: '/#process' },
+  { name: 'メニュー/料金', path: '/#menu' },
+  { name: 'アクセス', path: '/#access' },
 ]
 </script>
 
@@ -37,6 +37,7 @@ const navItems = [
         </li>
       </ul>
       <BaseButton
+        buttonType="button"
         buttonText="ご予約はこちらから"
         backgroundColor="var(--button-primary-color)"
       />

@@ -19,6 +19,7 @@
         <input
           type="number"
           id="number"
+          name="number"
           placeholder="09012345678"
           :class="$style.input"
         />
@@ -39,6 +40,7 @@
         <input
           type="email"
           id="email"
+          name="email"
           placeholder="art_make@gmail.com"
           :class="$style.input"
         />

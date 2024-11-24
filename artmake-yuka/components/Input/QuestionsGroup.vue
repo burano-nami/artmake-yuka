@@ -40,18 +40,18 @@
         <div>
           <div :class="$style.row">
             <div class="">第一希望</div>
-            <input type="date" :class="$style.input"/>
-            <input type="time" :class="$style.input"/>
+            <input type="date" name="date" :class="$style.input"/>
+            <input type="time" name="time" :class="$style.input"/>
           </div>
           <div :class="$style.row">
             <div class="">第二希望</div>
-            <input type="date" :class="$style.input"/>
-            <input type="time" :class="$style.input"/>
+            <input type="date" name="date" :class="$style.input"/>
+            <input type="time" name="time" :class="$style.input"/>
           </div>
           <div :class="$style.row">
             <div class="">第三希望</div>
-            <input type="date" :class="$style.input"/>
-            <input type="time" :class="$style.input"/>
+            <input type="date" name="date" :class="$style.input"/>
+            <input type="time" name="time" :class="$style.input"/>
           </div>
         </div>
       </div>
@@ -83,6 +83,7 @@
           <input 
             type="text"
             id="allergy"
+            name="allergy"
             placeholder="アルコール、薬剤、金属など"
             :class="$style.input"
           />
@@ -99,6 +100,7 @@
         <input
           type="text"
           id="medical-history"
+          name="medical-history"
           placeholder="口唇ヘルペスの既往が一度でもある方は必ずご記入ください"
           :class="$style.input"
         />
@@ -114,6 +116,7 @@
         <input
           type="text"
           id="art-make"
+          name="art-make"
           placeholder="初めて/過去にあり(部位・回数)"
           :class="$style.input"
         />
@@ -129,6 +132,7 @@
         <input
           type="text"
           id="design"
+          name="design"
           placeholder="わからない場合はおまかせ、またはご相談とご記入ください"
           :class="$style.input"
         />
@@ -141,7 +145,13 @@
         <label :class="$style.label" for="other">その他</label>
       </div>
       <div :class="$style.input_group">
-        <input type="text" id="other" style="height:100px" :class="$style.input"/>
+        <input
+          type="text"
+          id="other"
+          name="other"
+          style="height:100px"
+          :class="$style.input"
+        />
       </div>
     </div>
 

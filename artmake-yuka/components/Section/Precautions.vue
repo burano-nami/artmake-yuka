@@ -18,16 +18,42 @@ const afterTreatment = [
   'リップ施術後は、当日から施術部位に食べ物や飲み物の色素が付かないように注意が必要です。お水はそのまま飲んでいただいて問題ありませんが、お茶やコーヒーなど色の付いた飲み物はストローを使ってください。食事も一口で食べられるものに工夫し、ダウンタイムが終わるまでは特に気をつけてください。',
 ]
 
-const isActiveBefore = ref(false)
-const isActiveAfter = ref(false)
+const isOpenRight = ref(false) // 開閉状態を管理
+const isOpenLeft = ref(false) // 開閉状態を管理
+const contentHeight = ref(0) // 動的な高さを管理
+const contentRight = ref<HTMLElement | null>(null) // 対象のDOM要素を参照
+const contentLeft = ref<HTMLElement | null>(null) // 対象のDOM要素を参照
 
-const beforeOpen = () => {
-  isActiveBefore.value = !isActiveBefore.value
+
+// アコーディオンをトグルする関数
+const toggleRightAccordion = async () => {
+  isOpenRight.value = !isOpenRight.value
+
+  // 次のDOM更新後に高さを取得
+  await nextTick()
+  if (contentRight.value) {
+    contentHeight.value = isOpenRight.value ? contentRight.value.scrollHeight : 0
+  }
 }
 
-const afterOpen = () => {
-  isActiveAfter.value = !isActiveAfter.value
+const toggleLeftAccordion = async () => {
+  isOpenLeft.value = !isOpenLeft.value
+
+  // 次のDOM更新後に高さを取得
+  await nextTick()
+  if (contentLeft.value) {
+    contentHeight.value = isOpenLeft.value ? contentLeft.value.scrollHeight : 0
+  }
 }
+
+// 初期化時に高さを取得（必要なら）
+onMounted(() => {
+  if (contentRight.value) {
+    contentHeight.value = isOpenRight.value ? contentRight.value.scrollHeight : 0
+  }  if (contentLeft.value) {
+    contentHeight.value = isOpenLeft.value ? contentLeft.value.scrollHeight : 0
+  }
+})
 </script>
 
 <template>
@@ -36,34 +62,48 @@ const afterOpen = () => {
       title="Precautions"
       jaTitle="注意点"
     /> 
+    <!-- 施術前 -->
     <div :class="$style.wrapper">
       <div :class="$style.image">
         <img src="assets/images/lip-image.webp" alt="施術イメージ">
       </div>
-      <div :class="[$style.accordion, { [$style.active]: isActiveBefore }]">
-        <button @click="beforeOpen" :class="$style.accordion_header">
+      <div :class="$style.accordion">
+        <button 
+          @click="toggleRightAccordion" 
+          :class="[$style.accordion_header, { [$style.active]: isOpenRight }]"
+        >
           施術前
         </button>
-        <div v-if="isActiveBefore" :class="$style.accordion_content">
+        <div
+          ref="contentRight"
+          :style="{ height: isOpenRight ? `${contentHeight}px` : '0px' }"
+          :class="$style.accordion_content"
+        >
           <p v-for="item in beforeTreatment" :key="item">{{ item }}</p>
         </div>
       </div>
     </div>
-
+    <!-- 施術後 -->
     <div :class="[$style.wrapper, $style.left_align]">
       <div :class="$style.image">
         <img src="assets/images/treatment-image.webp" alt="施術イメージ">
       </div>
-      <div :class="[$style.accordion, { [$style.active]: isActiveAfter }]">
-        <button @click="afterOpen" :class="$style.accordion_header">
+      <div :class="$style.accordion">
+        <button 
+          @click="toggleLeftAccordion" 
+          :class="[$style.accordion_header, { [$style.active]: isOpenLeft }]"
+        >
           施術後
         </button>
-        <div v-if="isActiveAfter" :class="$style.accordion_content">
+        <div
+          ref="contentLeft"
+          :style="{ height: isOpenLeft ? `${contentHeight}px` : '0px' }"
+          :class="$style.accordion_content"
+        >
           <p v-for="item in afterTreatment" :key="item">{{ item }}</p>
         </div>
       </div>
     </div>
-
   </div>
 </template> 
 
@@ -157,29 +197,19 @@ const afterOpen = () => {
     padding-block   : calc(var(--sp-small) * 7);
     font-size: 28px;
   }
-}
 
-.active{
-  .accordion_header{
+  &.active { 
     &::after {
-      transform: rotate(225deg);
-      }
+      transform: translateY(-50%) rotate(225deg);
     }
-
-  .accordion_content {
-    max-block-size  : 100%;
-    opacity         : 1;
-    background-color: var(--white);
-    animation: slideDown 0.3s forwards;
   }
 }
 
 .accordion_content {
-  overflow  : hidden;
-  transition: max-height 0.5s ease, opacity 0.5s ease;
-  max-height: 0;
-  opacity   : 0;
-  transition: max-height 0.3s ease, opacity 0.3s ease;
+  overflow: hidden;
+  height: 0; 
+  transition: height 0.3s ease; 
+  background-color: var(--white);
 
   > p {
     border-right : 5px solid var(--pale-green);
@@ -187,17 +217,6 @@ const afterOpen = () => {
     border-left  : 5px solid var(--pale-green);
     padding      : var(--sp-medium);
     transition   : transform 0.5s, opacity 0.5s;
-  }
-}
-
-@keyframes slideDown {
-  from {
-    max-height: 0;
-    opacity: 0;
-  }
-  to {
-    max-height: 100%; /* 適切な最大値を指定 */
-    opacity: 1;
   }
 }
 </style>

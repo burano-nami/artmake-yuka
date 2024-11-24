@@ -11,7 +11,12 @@
         <label :class="$style.label" for="kana">生年月日</label>
       </div>
       <div :class="$style.input_group">
-        <input type="date" id="birthdate" :class="$style.input"/>
+        <input 
+          type="date"
+          id="birthdate" 
+          name="birthdate"
+          :class="$style.input"
+        />
       </div>
     </div>
 
@@ -21,7 +26,12 @@
         <label :class="$style.label" for="kana">ご年齢</label>
       </div>
       <div :class="$style.input_group">
-        <input type="number" id="age" :class="$style.input"/>
+        <input
+          type="number"
+          id="age"
+          name="age"
+          :class="$style.input"
+        />
       </div>
     </div>
   </div>

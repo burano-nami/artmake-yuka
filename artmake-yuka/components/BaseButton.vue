@@ -2,6 +2,8 @@
 const props = defineProps<{
   buttonText: string;
   backgroundColor: string;
+  buttonType: 'button' | 'submit';
+
 }>()
 
 // リンクさきを、インスタ、ラインもつけないといけない
@@ -10,6 +12,7 @@ const props = defineProps<{
 <template>
   <NuxtLink to="/reservation">
     <button
+      :type="buttonType"
       :class="$style.button"
       :style="{ background: props.backgroundColor }"
     >
