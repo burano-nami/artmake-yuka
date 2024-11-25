@@ -40,18 +40,15 @@
         <div>
           <div :class="$style.row">
             <div class="">第一希望</div>
-            <input type="date" name="date" :class="$style.input"/>
-            <input type="time" name="time" :class="$style.input"/>
+            <input type="datetime-local" name="date" :class="$style.input"/>
           </div>
           <div :class="$style.row">
             <div class="">第二希望</div>
-            <input type="date" name="date" :class="$style.input"/>
-            <input type="time" name="time" :class="$style.input"/>
+            <input type="datetime-local" name="date" :class="$style.input"/>
           </div>
           <div :class="$style.row">
             <div class="">第三希望</div>
-            <input type="date" name="date" :class="$style.input"/>
-            <input type="time" name="time" :class="$style.input"/>
+            <input type="datetime-local" name="date" :class="$style.input"/>
           </div>
         </div>
       </div>

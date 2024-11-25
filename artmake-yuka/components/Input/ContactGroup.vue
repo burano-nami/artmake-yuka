@@ -1,7 +1,19 @@
-<script setup lang='ts'>
+<script setup lang="ts">
 
+// props と emit を定義
+const props = defineProps({
+  modelValue: String // v-model の値を受け取る
+})
 
+const emit = defineEmits(['update:modelValue']) // v-model の更新イベント
+
+// 入力イベントで親に値を伝える
+const updateValue = (event: Event) => {
+  const value = (event.target as HTMLInputElement).value
+  emit('update:modelValue', value) // 親に値を送信
+}
 </script>
+
 
 <template>
   <div>
@@ -37,12 +49,20 @@
         <span :class=$style.badge>必須</span></label>
       </div>
       <div :class="$style.input_group">
+        <p
+          v-if="emailError"
+          :class="$style.error_message"
+        >
+          {{ emailError }}
+        </p>
         <input
           type="email"
           id="email"
           name="email"
           placeholder="art_make@gmail.com"
           :class="$style.input"
+          required
+          v-model="email"
         />
       </div>
     </div>
@@ -121,5 +141,10 @@
   display         : flex;
   padding         : calc(var(--sp-min) / 2 ) var(--sp-min);
   background-color: #d9d9d9;
+}
+
+.error_message {
+  color    : var(--red);
+  font-size: var(--fs-small);
 }
 </style>

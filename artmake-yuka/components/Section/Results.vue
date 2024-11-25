@@ -13,7 +13,7 @@
     <div :class="$style.button_area">
       <p :class="$style.button_text">その他症例写真、多数載せています</p>
       <BaseButton
-        buttonType="button"
+        type="button"
         buttonText="公式Instagramはこちら"
         backgroundColor="var(--button-instagram-color)"
       />

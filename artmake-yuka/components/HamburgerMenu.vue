@@ -30,7 +30,7 @@ const isActive = ref(false)
         </li>
       </ul>
       <BaseButton
-        buttonType="button"
+        type="button"
         buttonText="ご予約はこちらから"
         backgroundColor="var(--button-primary-color)"
       />

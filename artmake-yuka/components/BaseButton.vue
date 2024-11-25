@@ -2,23 +2,18 @@
 const props = defineProps<{
   buttonText: string;
   backgroundColor: string;
-  buttonType: 'button' | 'submit';
-
 }>()
 
 // リンクさきを、インスタ、ラインもつけないといけない
 </script>
 
 <template>
-  <NuxtLink to="/reservation">
-    <button
-      :type="buttonType"
-      :class="$style.button"
-      :style="{ background: props.backgroundColor }"
-    >
-      {{ buttonText }}
-    </button>
-  </NuxtLink>
+  <button
+    :class="$style.button"
+    :style="{ background: props.backgroundColor }"
+  >
+    {{ buttonText }}
+  </button>
 </template>
 
 
@@ -27,10 +22,10 @@ const props = defineProps<{
 
 
 .button {
-  inline-size: 300px;
-  block-size         : 50px;
+  inline-size    : 300px;
+  block-size     : 50px;
   display        : flex;
-  padding-block        : var(--sp-medium);
+  padding-block  : var(--sp-medium);
   justify-content: center;
   align-items    : center;
   border-radius  : 50px;
@@ -41,7 +36,7 @@ const props = defineProps<{
   font-style     : normal;
   font-weight    : 500;
   letter-spacing : var(--line-height-normal);
-  cursor: pointer;
+  cursor         : pointer;
 
   &:hover {
     opacity: 1;
@@ -49,7 +44,7 @@ const props = defineProps<{
 
   @include mediaScreen('mobile') {
     inline-size: 220px;
-    block-size         :  40px;
+    block-size : 40px;
   }
 }
 

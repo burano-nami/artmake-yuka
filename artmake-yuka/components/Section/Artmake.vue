@@ -71,6 +71,7 @@
   flex-direction: column;
   align-items: center;
   max-inline-size: var(--contents-max-width);
+  gap: var(--sp-large);
 }
 
 .description {
@@ -94,25 +95,34 @@
 
 /* 真ん中の層 */
 .middle_container {
-  display: grid;
-  grid-template-columns: 325px auto;
-  grid-template-rows: auto auto;
-  grid-template-areas: 
-    "motif blank1"
-    "blank2 text";
-  align-items: center;
-  gap: 20px;
   inline-size: 100%;
+  block-size: fit-content;
+  position: relative;
 }
 
 .motif_contents {
-  grid-area: motif;
-  block-size: auto;
+  position: relative;
+  inline-size:calc(var(--contents-max-width) / 2);
+  block-size: 500px;
+
+  @include mediaScreen('mobile') {
+    inline-size: 100%;
+  }
+}
+
+.motif_text {
+  inline-size: min(470px, 100%);
+  margin-inline-start: auto;
+  /* margin-block-start: calc(var(--sp-larger) * 6); */
+
+  @include mediaScreen('mobile') {
+    /* margin-block-start: 0; */
+  }
 }
 
 
 .motif {
-  position       : relative;
+  position: absolute;
   inline-size    : 325px;
   block-size     : 325px;
   display        : flex;
@@ -124,21 +134,23 @@
     color      : #606263;
     text-align : center;
     font-family: "Zen Kaku Gothic New";
-    font-size  : 34px;
+    font-size  : var(--fs-motif);
     font-weight: 500;
+  }
+
+  @include mediaScreen('mobile') {
+    inline-size: 215px;
+    block-size: 215px;
   }
 }
 
 .motif1 {
-  top: 0; /* モチーフ1を上に配置 */
-  left: 0;
-  z-index: 1; /* 背面に配置 */
+  /* position: relative; */
 }
 
 .motif2 {
-  top: -230px; /* モチーフ2を少し下に配置して重ねる */
-  left: 230px; /* 少し右にずらす */
-  z-index: 2; /* 前面に配置 */
+  right: 0;
+  bottom: 0;
 }
 
 .motif_background {
@@ -148,7 +160,7 @@
   block-size: 100%;
   background-color: var(--logo-green);
   opacity: 0.3;
-  filter: blur(25px);
+  filter: blur(5px);
 }
 
 .gray {
@@ -156,9 +168,6 @@
   opacity: 0.9;
 }
 
-.motif_text {
-  grid-area : text;
-}
 
 
 /* 下の層 */

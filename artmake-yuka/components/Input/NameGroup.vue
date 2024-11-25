@@ -1,6 +1,5 @@
 <script setup lang='ts'>
 
-
 </script>
 
 <template>
@@ -10,6 +9,12 @@
           <label :class="$style.label" for="name">お名前<span :class=$style.badge>必須</span></label>
         </div>
         <div :class="$style.input_group">
+          <!-- <p
+            v-if="nameError"
+            :class="$style.error_message"
+          >
+            {{ nameError }}
+          </p> -->
           <div :class="$style.name_row">
               <label :class="$style.name_label">
                 <div style="margin-inline-end: var(--sp-small);">姓</div>
@@ -19,7 +24,6 @@
                   autocomplete="family-name"
                   :class="$style.name_form"
                   placeholder="山田"
-                  required
                 />
               </label>
               <label :class="$style.name_label">
@@ -42,6 +46,12 @@
           <label :class="$style.label" for="kana">フリガナ<span :class=$style.badge>必須</span></label>
         </div>
         <div :class="$style.input_group">
+          <p
+            v-if="nameError"
+            :class="$style.error_message"
+          >
+            {{ nameError }}
+          </p>
           <div :class="$style.name_row">
             <label :class="$style.name_label">
                 <div style="margin-inline-end: var(--sp-small);">セイ</div>
@@ -52,6 +62,9 @@
                   :class="$style.name_form"
                   placeholder="ヤマダ"
                   required
+                  :value="name"
+                  @input="onInput"
+                  @blur="validateName"
                 />
             </label>
             <label :class="$style.name_label">
@@ -173,5 +186,10 @@
 .name_form {
   flex  : 1 1 0%;
   border: 1px solid var(--light-gray);
+}
+
+.error_message {
+  color    : var(--red);
+  font-size: var(--fs-small);
 }
 </style>

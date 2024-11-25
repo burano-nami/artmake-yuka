@@ -1,7 +1,7 @@
-<script setup lang='ts'>
-
+<script setup lang="ts">
 
 </script>
+
 
 <template>
   <div :class="$style.booking_container">
@@ -26,7 +26,7 @@
         <InputNameGroup />
         <InputBirthAndAgeGroup />
         <InputAddressGroup />
-        <InputContactGroup />
+        <InputContactGroup/>
         <InputQuestionsGroup />
         <div :class="$style.submit_wrapper">
           <p :class="$style.description_booking">
@@ -38,12 +38,13 @@
             すべての内容を確認し、同意いたしました。
           </label>
           <BaseButton
-            buttonType="submit"
+            type="submit"
             buttonText="送信"
             backgroundColor="var(--button-primary-color)"
           />
         </div>
       </form>
+      
     </div>
   </div>
 </template>
