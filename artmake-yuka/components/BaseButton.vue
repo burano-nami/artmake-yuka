@@ -1,19 +1,35 @@
 <script setup lang='ts'>
 const props = defineProps<{
-  buttonText: string;
-  backgroundColor: string;
-}>()
+    buttonText: string;
+    variant: 'default' | 'disabled' | 'line' | 'instagram';
+  }>()
 
-// リンクさきを、インスタ、ラインもつけないといけない
+  // 各リンクを設定
+const urls = {
+  instagram: 'https://www.instagram.com/nomura_artmake/', 
+  line: 'https://lin.ee/QxVySL9' // LINEのリンク
+}
 </script>
 
 <template>
-  <button
-    :class="$style.button"
-    :style="{ background: props.backgroundColor }"
-  >
-    {{ buttonText }}
-  </button>
+  <template v-if="variant === 'instagram' || variant === 'line'">
+    <a
+      :href="urls[variant]"
+      target="_blank"
+      rel="noopener noreferrer"
+      :class="[$style.button, $style[variant]]"
+    >
+      {{ buttonText }}
+    </a>
+  </template>
+  <template v-else>
+    <NuxtLink
+      to="/reservation"
+      :class="[$style.button, $style[variant]]"
+    >
+      {{ buttonText }}
+    </NuxtLink>
+  </template>
 </template>
 
 
@@ -37,6 +53,23 @@ const props = defineProps<{
   font-weight    : 500;
   letter-spacing : var(--line-height-normal);
   cursor         : pointer;
+
+  &.default {
+    background-image: var(--button-primary-color);
+  }
+
+  &.disabled {
+    background-color: var(--light-gray);
+    pointer-events  : none;
+  }
+
+  &.line {
+    background-image: var(--button-line-color);
+  }
+
+  &.instagram {
+    background-image: var(--button-instagram-color);
+  }
 
   &:hover {
     opacity: 1;

@@ -14,8 +14,8 @@ const restrictionsLists = [
   'ご不安が強く、施術や定着に何らかの影響を及ぼす恐れがある方',
   '基礎疾患をお持ちの方',
   '飲酒をされている方、または当日飲酒予定の方',
-  'その他、医師または看護師が施術困難と判断しㅤた場合',
-  '過去に他院にてアートメイクをされている方はㅤ必ずご相談ください。',
+  'その他、医師または看護師が施術困難と判断した場合',
+  '過去に他院にてアートメイクをされている方は必ずご相談ください。',
 ]
 
 const risks = [
@@ -117,8 +117,14 @@ const props = defineProps<{
   animation      : tabAnime 0.3s ease-in-out;
 
   li {
-    list-style: circle;
+    list-style: disc ;
     margin-inline-start: 2em;
+    
+
+    &::marker {
+      color: var(--pale-green);
+      font-size: 0.8em;
+    }
   }
 }
 

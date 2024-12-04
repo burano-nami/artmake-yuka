@@ -82,20 +82,20 @@
 
   @include mediaScreen('tablet') {
     inline-size          : 100%;
-    grid-template-columns: 1fr 300px;
+    grid-template-columns: 1fr 250px;
 
     &:nth-child(even) {
-      grid-template-columns: 300px 1fr; 
+      grid-template-columns: 250px 1fr; 
     }
   }
 
   @include mediaScreen('mobile') {
     inline-size          : 100%;
-    grid-template-columns: 1fr 240px;
+    grid-template-columns: 1fr 200px;
 
     &:nth-child(even) {
       grid-template-areas: "title image";
-      grid-template-columns: 1fr 240px;
+      grid-template-columns: 1fr 200px;
     }
   }
 }

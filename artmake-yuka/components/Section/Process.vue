@@ -9,7 +9,7 @@ const steps = [
 </script>
 
 <template>
-  <div :class="$style.process_container">
+  <SectionContainer :class="$style.process_container">
     <SectionTitle
       title="process"
       jaTitle="施術の流れ"
@@ -39,7 +39,7 @@ const steps = [
         が改善します。また、生活習慣や代謝によって色の定着には個人差があります。
       </p>
     </div>
-  </div>
+  </SectionContainer>
 </template>
 
 

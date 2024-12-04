@@ -1,17 +1,20 @@
 <script setup lang="ts">
+const emit = defineEmits<{
+  (e: 'update:modelValue', value: boolean): void 
+}>()
 
-// props と emit を定義
-const props = defineProps({
-  modelValue: String // v-model の値を受け取る
+const props = defineProps<{
+  modelValue: boolean // v-modelのバインディング値
+}>()
+
+// メールアドレス入力を監視
+const email = ref<string>('')
+
+// 入力の有効性を確認
+watch(email, (newValue) => {
+  const isValid = newValue.trim().length > 0 // 空チェック
+  emit('update:modelValue', isValid) // 親に状態を通知
 })
-
-const emit = defineEmits(['update:modelValue']) // v-model の更新イベント
-
-// 入力イベントで親に値を伝える
-const updateValue = (event: Event) => {
-  const value = (event.target as HTMLInputElement).value
-  emit('update:modelValue', value) // 親に値を送信
-}
 </script>
 
 
@@ -29,7 +32,7 @@ const updateValue = (event: Event) => {
       </div>
       <div :class="$style.input_group">
         <input
-          type="number"
+          type="text"
           id="number"
           name="number"
           placeholder="09012345678"
@@ -49,20 +52,14 @@ const updateValue = (event: Event) => {
         <span :class=$style.badge>必須</span></label>
       </div>
       <div :class="$style.input_group">
-        <p
-          v-if="emailError"
-          :class="$style.error_message"
-        >
-          {{ emailError }}
-        </p>
         <input
+          v-model="email"
           type="email"
           id="email"
           name="email"
           placeholder="art_make@gmail.com"
           :class="$style.input"
           required
-          v-model="email"
         />
       </div>
     </div>
@@ -138,13 +135,10 @@ const updateValue = (event: Event) => {
 
 .badge {
   color           : var(--white);
+  font-size       : var(--fs-smaller);
   display         : flex;
-  padding         : calc(var(--sp-min) / 2 ) var(--sp-min);
-  background-color: #d9d9d9;
-}
-
-.error_message {
-  color    : var(--red);
-  font-size: var(--fs-small);
+  align-items     : center;
+  padding-inline  : var(--sp-min);
+  background-color: var(--red);
 }
 </style>

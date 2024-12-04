@@ -39,7 +39,7 @@ const navItems = [
       <BaseButton
         type="button"
         buttonText="ご予約はこちらから"
-        backgroundColor="var(--button-primary-color)"
+        variant="default"
       />
     </div>
   </div>

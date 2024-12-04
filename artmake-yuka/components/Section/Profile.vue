@@ -7,7 +7,7 @@
   <div :class=$style.profile_container>
     <div :class="$style.upper_section">
       <div :class=$style.profile_image>
-        <img src="assets/images/profile_image.png" alt="プロフィール画像">
+        <img src="assets/images/profile.png" alt="プロフィール画像">
       </div>
       <div :class="$style.profile_details">
         <small>アートメイクアーティスト</small>
@@ -49,16 +49,17 @@
   }
 
   img {
-    inline-size: 100%;
-    object-fit : cover;
+    inline-size  : 100%;
+    object-fit   : cover;
+    border-radius: 50%;
   }
 }
 
 .upper_section {
-  display    : flex;
-  justify-content: center;
-  align-items: center;
-  gap        : var(--sp-large);
+  display         : flex;
+  justify-content : center;
+  align-items     : center;
+  gap             : var(--sp-large);
   margin-block-end: var(--sp-large);
 
   @include mediaScreen('mobile') {
@@ -74,8 +75,8 @@
 }
 
 .name {
-  font-size: var(--fs-larger);
-  font-weight: 300;
+  font-size       : var(--fs-larger);
+  font-weight     : 300;
   margin-block-end: var(--sp-large);
 
   @include mediaScreen('mobile') {

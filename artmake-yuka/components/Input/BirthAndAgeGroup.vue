@@ -27,7 +27,7 @@
       </div>
       <div :class="$style.input_group">
         <input
-          type="number"
+          type="text"
           id="age"
           name="age"
           :class="$style.input"

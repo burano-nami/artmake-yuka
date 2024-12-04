@@ -18,7 +18,12 @@ body {
   letter-spacing       : var(--letter-spacing-normal);
   word-wrap            : break-word;
   font-feature-settings: 'palt';
-  leading-trim         : both;
+  leading-trim         : both;  
+
+  > * {
+    overflow: hidden;
+  }
+  
 }
 
 /* 英語用フォントスタイル */
@@ -116,6 +121,10 @@ select {
       }
     }
   }
+}
+
+textarea {
+  outline: none;
 }
 
 button {

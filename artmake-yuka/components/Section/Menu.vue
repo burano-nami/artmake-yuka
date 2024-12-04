@@ -58,7 +58,7 @@ const noteLists = [
 </script>
 
 <template>
-  <div :class="$style.menu_container">
+  <SectionContainer :class="$style.menu_container">
     <SectionTitle
       title="Menu"
       jaTitle="メニュー・料金"
@@ -88,7 +88,7 @@ const noteLists = [
         {{ note }}
       </li>
     </ul>
-  </div>
+  </SectionContainer>
 </template>
 
 

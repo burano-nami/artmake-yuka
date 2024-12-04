@@ -31,7 +31,7 @@ const clinics = [
 </script>
 
 <template>
-  <div :class="$style.access_container">
+  <SectionContainer :class="$style.access_container">
     <SectionTitle
       title="Access"
       jaTitle="アクセス"
@@ -69,7 +69,7 @@ const clinics = [
         </div>
       </div>
     </div>
-  </div>
+  </SectionContainer>
 </template>
 
 
@@ -77,7 +77,6 @@ const clinics = [
 @use '~/assets/scss/mixin' as *;
 
 .access_container {
-  inline-size: 100%;
   max-inline-size: var(--contents-max-width);
   display        : flex;
   flex-direction : column;

@@ -31,9 +31,11 @@ onBeforeUnmount(() => {
         <h1>医療アートメイク</h1>
       </div>
     </div>
-    <div :class="$style.sub_hero">
-      <SectionIntroduction />
-      <SectionProfile />
+    <div :class="$style.sub_hero_container">
+      <div :class="$style.sub_hero">
+        <SectionIntroduction />
+        <SectionProfile />
+      </div>
     </div>
   </div>
 </template>
@@ -43,26 +45,30 @@ onBeforeUnmount(() => {
 @use '~/assets/scss/mixin' as *;
 
 .hero_container {
-  max-inline-size: 1200px;
-  margin-inline  : auto;
-  display        : flex;
-  flex-direction : column;
-  align-items    : center;
-  gap            : calc(var(--sp-larger) * 1.5);
-
-  @include mediaScreen('mobile') {
-    /* align-items    : flex-start; */
-  }
+  inline-size       : 100%;
+  display           : flex;
+  flex-direction    : column;
+  align-items       : center;
+  padding-block: var(--sp-larger);
+  gap               : calc(var(--sp-larger) * 1.5);
 }
 
 .image_contents {
+  max-inline-size: var(--desktop-max-width );
+  inline-size    : 100%;
+  margin-inline: auto;
+  padding-inline: var(--sp-larger);
   display        : flex;
   justify-content: center;
   align-items    : center;
   position       : relative;
 
+  @include mediaScreen('tablet') {
+    padding-inline: var(--sp-medium);
+  }
+
   @include mediaScreen('mobile') {
-    inline-size: 100%;
+    padding-inline: 0;
     justify-content: flex-start;
   }
 }
@@ -81,6 +87,7 @@ onBeforeUnmount(() => {
 }
 
 .title_contents {
+  inline-size: 100%;
   color      : var(--black, #333);
   font-family: "Noto Serif JP";
   line-height: normal;
@@ -90,6 +97,7 @@ onBeforeUnmount(() => {
   transform  : translateY(-50%);
 
   @include mediaScreen('mobile') {
+    inline-size: auto;
     top       : auto;
     bottom    : 15%;
     right     : 0;
@@ -119,15 +127,28 @@ onBeforeUnmount(() => {
   }
 }
 
+.sub_hero_container {
+  max-inline-size: var(--desktop-max-width );
+  display           : flex;
+  flex-direction    : column;
+  align-items       : center;
+  padding-inline: var(--sp-larger);
+
+  @include mediaScreen('tablet') {
+    padding-inline: var(--sp-medium);
+  }
+}
+
 .sub_hero {
   inline-size     : 100%;
-  background-color: blanchedalmond;
+  background-color: var(--white);
   display         : flex;
   flex-direction  : column;
   align-items     : center;
   gap             : calc(var(--sp-larger) * 1.5);
   margin-inline   : var(--sp-medium);
   margin-block    : calc(var(--sp-larger) * 1.2);
+  padding-block:  calc(var(--sp-large) * 2);
 }
 
 

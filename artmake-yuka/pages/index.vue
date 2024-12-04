@@ -4,8 +4,10 @@
 
 
 <template>
-  <div :class="$style.main_container"> 
-    <SectionHero />
+  <div :class="$style.main_container">
+    <div :class="$style.hero_bg"> 
+      <SectionHero />
+    </div>
     <SectionArtmake id="artmake" :class="$style.artmake"/>
     <SectionResults id="results"/>
     <SectionProcess id="process"/>
@@ -13,7 +15,6 @@
     <SectionAccess id="access"/>
   </div>
 </template>
-
 
 <style lang="scss" module>
 @use '~/assets/scss/mixin' as *;
@@ -29,10 +30,44 @@
   }
 }
 
+.hero_bg {
+  inline-size        : 100vw;
+  position           : relative;
+
+  &::before {
+    content          : '';
+  position         : absolute;
+  top              : 0;
+  left             : 0;
+  inline-size      : 100%;
+  block-size       : 100%;
+  background-image : url('/assets/images/desktop-bg.webp');
+  background-size  : cover; 
+  background-position: center;
+  background-repeat: no-repeat; 
+  z-index          : -1;
+  opacity: 0.7;
+  }
+
+
+  &::after {
+    content          : '';
+    position         : absolute;
+    top:0;
+    /* top              : 400px;  */
+    inline-size      : 100%;
+    block-size       : 100%;
+    background       : linear-gradient(180deg,rgba(255, 255, 255, 1) 15%, rgba(255, 255, 255, 0) 40%);
+    z-index          : -1;
+  }
+}
+
+
+
 </style>
 
 <style>
 #artmake, #results, #process, #menu, #access {
-  padding-top: 100px; /* 固定ヘッダーの高さ分 */
+  padding-top: 100px; 
 }
 </style>

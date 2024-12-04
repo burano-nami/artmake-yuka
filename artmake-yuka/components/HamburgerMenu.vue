@@ -32,7 +32,7 @@ const isActive = ref(false)
       <BaseButton
         type="button"
         buttonText="ご予約はこちらから"
-        backgroundColor="var(--button-primary-color)"
+        variant="primary"
       />
     </div>
   </div>

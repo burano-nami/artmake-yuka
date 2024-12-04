@@ -46,7 +46,7 @@ const clinicInfo = [
     <BaseButton
       type="button"
       buttonText="公式LINEはこちら"
-      backgroundColor="var(--button-line-color)"
+      variant="line"
     />
   </div>
 </template>

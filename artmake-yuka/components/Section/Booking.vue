@@ -1,10 +1,15 @@
 <script setup lang="ts">
+const isEmailValid = ref(false)
+const isNameValid = ref(false)
+const isChecked = ref(false)
 
+const isValid = computed(() => {
+  return isEmailValid.value && isNameValid.value && isChecked.value
+})
 </script>
 
-
 <template>
-  <div :class="$style.booking_container">
+  <SectionContainer :class="$style.booking_container">
     <SectionTitle
       title="Booking"
       jaTitle="ご予約"
@@ -23,10 +28,10 @@
         method="post"
         action="https://hyperform.jp/api/waZVnU3d"
       >
-        <InputNameGroup />
+        <InputNameGroup v-model="isNameValid"/>
         <InputBirthAndAgeGroup />
         <InputAddressGroup />
-        <InputContactGroup/>
+        <InputContactGroup  v-model="isEmailValid"/>
         <InputQuestionsGroup />
         <div :class="$style.submit_wrapper">
           <p :class="$style.description_booking">
@@ -34,21 +39,28 @@
             ご納得いただいた方のみの施術となります。必ずご一読いただき、同意をおねがいします。
           </p>
           <label>
-            <input type="checkbox" required>
+            <input
+              v-model="isChecked"
+              type="checkbox"
+              required
+            >
             すべての内容を確認し、同意いたしました。
           </label>
-          <BaseButton
-            type="submit"
-            buttonText="送信"
-            backgroundColor="var(--button-primary-color)"
-          />
+          <div>
+            <p :class="$style.attention">
+              名前、メールアドレスは必須項目です
+            </p>
+            <BaseButton
+              type="submit"
+              buttonText="送信"
+              :variant="isValid? 'default' : 'disabled'"
+            />
+          </div>
         </div>
       </form>
-      
     </div>
-  </div>
+  </SectionContainer>
 </template>
-
 
 <style lang="scss" module>
 @use '~/assets/scss/mixin' as *;
@@ -115,6 +127,13 @@
   inline-size: 100%;
   margin-block-start: var(--sp-large);
   gap               : var(--sp-medium);
+}
+
+.attention {
+  color      : var(--red);
+  font-size  : var(--fs-small);
+  text-align: center;
+  margin-block: var(--sp-small);
 }
 
 </style>

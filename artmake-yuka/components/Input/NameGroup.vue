@@ -1,4 +1,21 @@
 <script setup lang='ts'>
+const emit = defineEmits<{
+  (e: 'update:modelValue', value: boolean): void
+}>()
+
+const props = defineProps<{
+  modelValue: boolean 
+}>()
+
+const familyName = ref<string>('')
+const firstName = ref<string>('')
+const familyNameKana = ref<string>('')
+const firstNameKana = ref<string>('')
+
+watch([familyName, firstName, familyNameKana, firstNameKana], ([familyName, firstName, familyNameKana, firstNameKana]) => {
+  const isValid = familyName.trim().length > 0 && firstName.trim().length > 0 && familyNameKana.trim().length > 0 && firstNameKana.trim().length > 0
+  emit('update:modelValue', isValid)
+})
 
 </script>
 
@@ -9,26 +26,23 @@
           <label :class="$style.label" for="name">お名前<span :class=$style.badge>必須</span></label>
         </div>
         <div :class="$style.input_group">
-          <!-- <p
-            v-if="nameError"
-            :class="$style.error_message"
-          >
-            {{ nameError }}
-          </p> -->
           <div :class="$style.name_row">
               <label :class="$style.name_label">
                 <div style="margin-inline-end: var(--sp-small);">姓</div>
                 <input 
+                  v-model="familyName"
                   type="text"
                   name="family-name"
                   autocomplete="family-name"
                   :class="$style.name_form"
                   placeholder="山田"
+                  required
                 />
               </label>
               <label :class="$style.name_label">
                 <div style="margin-inline-end: var(--sp-small);">名</div>
                 <input 
+                  v-model="firstName"
                   type="text"
                   name="given-name"
                   autocomplete="given-name"
@@ -46,37 +60,30 @@
           <label :class="$style.label" for="kana">フリガナ<span :class=$style.badge>必須</span></label>
         </div>
         <div :class="$style.input_group">
-          <p
-            v-if="nameError"
-            :class="$style.error_message"
-          >
-            {{ nameError }}
-          </p>
           <div :class="$style.name_row">
             <label :class="$style.name_label">
                 <div style="margin-inline-end: var(--sp-small);">セイ</div>
                 <input 
+                  v-model="familyNameKana"
                   type="text"
-                  name="family-name"
+                  name="family-name-kana"
                   autocomplete="family-name"
                   :class="$style.name_form"
                   placeholder="ヤマダ"
                   required
-                  :value="name"
-                  @input="onInput"
-                  @blur="validateName"
                 />
             </label>
             <label :class="$style.name_label">
               <div style="margin-inline-end: var(--sp-small);">メイ</div>
-              <input 
-                type="text"
-                name="given-name"
-                autocomplete="given-name"
-                :class="$style.name_form"
-                placeholder="ハナコ"
-                required
-              />
+                <input 
+                  v-model="firstNameKana"
+                  type="text"
+                  name="given-name-kana"
+                  autocomplete="given-name"
+                  :class="$style.name_form"
+                  placeholder="ハナコ"
+                  required
+                />
             </label>
           </div>
         </div>
@@ -168,9 +175,11 @@
 
 .badge {
   color           : var(--white);
+  font-size       : var(--fs-smaller);
   display         : flex;
-  padding         : calc(var(--sp-min) / 2 ) var(--sp-min);
-  background-color: #d9d9d9;
+  align-items     : center;
+  padding-inline  : var(--sp-min);
+  background-color: var(--red);
 }
 
 .name_label {
@@ -186,10 +195,5 @@
 .name_form {
   flex  : 1 1 0%;
   border: 1px solid var(--light-gray);
-}
-
-.error_message {
-  color    : var(--red);
-  font-size: var(--fs-small);
 }
 </style>

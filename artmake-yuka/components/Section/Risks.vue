@@ -17,7 +17,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div :class="$style.risks_container">
+  <SectionContainer :class="$style.risks_container">
     <SectionTitle
       title="Risks"
       jaTitle="リスクと副作用等"
@@ -47,7 +47,7 @@ onMounted(() => {
           :selectedTab="selectedTab"
         />
       </div>  
-  </div>
+  </SectionContainer>
 </template> 
 
 
@@ -64,7 +64,6 @@ onMounted(() => {
 .risks_contents {
   max-width     : var(--section-max-width);
   margin-inline : auto;
-  padding-inline: var(--sp-large);
   margin-bottom : var(--decoration-height);
   margin-block: var(--sp-larger);
 }

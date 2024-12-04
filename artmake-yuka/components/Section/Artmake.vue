@@ -5,7 +5,7 @@
 </script> -->
 
 <template>
-  <div :class="$style.artmake_container">
+  <SectionContainer :class="$style.artmake_container">
     <SectionTitle
       title="Artmake"
       jaTitle="アートメイクについて"
@@ -22,14 +22,7 @@
     <!-- 真ん中の層 -->
     <div :class="$style.middle_container">
       <div :class="$style.motif_contents">
-        <div :class="[$style.motif, $style.motif1]">
-          <div :class="$style.motif_background" />
-          <span>お客様の希望</span>
-        </div>
-        <div :class="[$style.motif, $style.motif2]">
-          <div :class="[$style.motif_background, $style.gray]" />
-          <span>施術者の提案</span>
-        </div>
+        <img src="assets/images/motif.png" alt="お客様の希望・施術者の提案">
       </div>
       <p :class="$style.motif_text">
         お客様のご希望を伺いながら、骨格や筋肉の状態を確認し、最適なデザインをご提案します。
@@ -59,7 +52,7 @@
         </p>
       </div>
     </div>
-  </div>
+  </SectionContainer>
 </template>
 
 
@@ -67,15 +60,15 @@
 @use '~/assets/scss/mixin' as *;
 
 .artmake_container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display        : flex;
+  flex-direction : column;
+  align-items    : center;
   max-inline-size: var(--contents-max-width);
-  gap: var(--sp-large);
+  gap            : var(--sp-large);
 }
 
 .description {
-  inline-size: var(--contents-lower-width);
+  inline-size       : var(--contents-lower-width);
   margin-block-start: var(--sp-large);
 
   @include mediaScreen('mobile') {
@@ -84,7 +77,6 @@
 }
 
 .image {
-  margin-block: calc(var(--sp-small) * 5);
 
   img {
     inline-size: 100%;
@@ -96,79 +88,28 @@
 /* 真ん中の層 */
 .middle_container {
   inline-size: 100%;
-  block-size: fit-content;
-  position: relative;
+  block-size : fit-content;
+  position   : relative;
 }
 
 .motif_contents {
-  position: relative;
-  inline-size:calc(var(--contents-max-width) / 2);
-  block-size: 500px;
+  inline-size: 590px;
 
   @include mediaScreen('mobile') {
-    inline-size: 100%;
+    inline-size  : 360px;
+    margin-inline: auto;
   }
 }
 
 .motif_text {
-  inline-size: min(470px, 100%);
+  inline-size        : min(470px, 100%);
   margin-inline-start: auto;
-  /* margin-block-start: calc(var(--sp-larger) * 6); */
+  margin-block-start : calc(var(--sp-large) * -2);
 
   @include mediaScreen('mobile') {
-    /* margin-block-start: 0; */
+    margin-block-start: calc(var(--sp-large) * -1);
   }
 }
-
-
-.motif {
-  position: absolute;
-  inline-size    : 325px;
-  block-size     : 325px;
-  display        : flex;
-  align-items    : center;
-  justify-content: center;
-
-  span {
-    position   : relative;
-    color      : #606263;
-    text-align : center;
-    font-family: "Zen Kaku Gothic New";
-    font-size  : var(--fs-motif);
-    font-weight: 500;
-  }
-
-  @include mediaScreen('mobile') {
-    inline-size: 215px;
-    block-size: 215px;
-  }
-}
-
-.motif1 {
-  /* position: relative; */
-}
-
-.motif2 {
-  right: 0;
-  bottom: 0;
-}
-
-.motif_background {
-  position: absolute;
-  border-radius  : 50%;
-  inline-size: 100%;
-  block-size: 100%;
-  background-color: var(--logo-green);
-  opacity: 0.3;
-  filter: blur(5px);
-}
-
-.gray {
-  background-color: var(--light-gray);
-  opacity: 0.9;
-}
-
-
 
 /* 下の層 */
 .card_contents {

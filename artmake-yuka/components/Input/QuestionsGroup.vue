@@ -16,7 +16,7 @@
             <input
               type="radio"
               name="clinic"
-              value="clinic1"
+              value="洗足整形・形成外科"
             >
             洗足整形・形成外科
           </label>
@@ -24,7 +24,7 @@
             <input
               type="radio"
               name="clinic"
-              value="clinic2"
+              value="go-en.デンタルクリニック自由が丘"
             />
             go-en.デンタルクリニック自由が丘
           </label>
@@ -40,15 +40,15 @@
         <div>
           <div :class="$style.row">
             <div class="">第一希望</div>
-            <input type="datetime-local" name="date" :class="$style.input"/>
+            <input type="datetime-local" name="DesiredDate_1" :class="$style.input"/>
           </div>
           <div :class="$style.row">
             <div class="">第二希望</div>
-            <input type="datetime-local" name="date" :class="$style.input"/>
+            <input type="datetime-local" name="DesiredDate_2" :class="$style.input"/>
           </div>
           <div :class="$style.row">
             <div class="">第三希望</div>
-            <input type="datetime-local" name="date" :class="$style.input"/>
+            <input type="datetime-local" name="DesiredDate_3" :class="$style.input"/>
           </div>
         </div>
       </div>
@@ -66,7 +66,7 @@
                 type="radio"
                 id="allergy"
                 name="allergy"
-                value="clinic1"
+                value="無し"
               />無し
             </label>
             <label>
@@ -74,7 +74,7 @@
                 type="radio"
                 id="allergy"
                 name="allergy"
-                value="clinic2"
+                value="有り"
               />有り(有りの方は詳細をご記入ください)
             </label>
           <input 
@@ -113,7 +113,7 @@
         <input
           type="text"
           id="art-make"
-          name="art-make"
+          name="art-make_experience"
           placeholder="初めて/過去にあり(部位・回数)"
           :class="$style.input"
         />
@@ -142,8 +142,7 @@
         <label :class="$style.label" for="other">その他</label>
       </div>
       <div :class="$style.input_group">
-        <input
-          type="text"
+        <textarea
           id="other"
           name="other"
           style="height:100px"
@@ -164,7 +163,7 @@
               type="radio"
               id="contact"
               name="contact"
-              value="clinic1"
+              value="電話"
             />電話
           </label>
           <label>
@@ -172,7 +171,7 @@
               type="radio"
               id="contact"
               name="contact"
-              value="clinic2"
+              value="メール"
             />メール
           </label>
         </div>

@@ -39,7 +39,6 @@ const listItems = [
   align-items     : center;
   gap             : var(--sp-larger);
   margin-inline   : calc(var(--sp-medium) * 2);
-  background-color: beige;
 
   @include mediaScreen('mobile') {
     flex-direction: column-reverse;

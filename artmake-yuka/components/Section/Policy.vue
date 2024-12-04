@@ -23,7 +23,7 @@ const policies = [
 </script>
 
 <template>
-  <div :class="$style.policy_container">
+  <SectionContainer :class="$style.policy_container">
     <SectionTitle
       title="Policy"
       jaTitle="キャンセルポリシー"
@@ -56,7 +56,7 @@ const policies = [
         </div>
       </div>
     </div>
-  </div>
+  </SectionContainer>
 </template> 
 
 
@@ -82,7 +82,6 @@ const policies = [
   inline-size : 100%;
   margin-block: var(--sp-larger);
   position    : relative;
-
 }
 
   /* 各セクション */
@@ -126,5 +125,4 @@ const policies = [
     padding-block : calc(var(--sp-small) * 1.5);
   }
 }
-
 </style>
