@@ -8,6 +8,12 @@
 export default defineNuxtConfig({
   ssr: false,
 
+  nitro: {
+    output: {
+      publicDir: 'dist'
+    }
+  },
+
   // pages: false,
 
   app: {

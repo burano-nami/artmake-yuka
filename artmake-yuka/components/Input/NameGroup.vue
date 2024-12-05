@@ -186,7 +186,7 @@ watch([familyName, firstName, familyNameKana, firstNameKana], ([familyName, firs
   display    : flex;
   align-items: center;
 
-  div > {
+  > div {
     flex : 0 0 auto;
     width: 8.33333333%;
   }
