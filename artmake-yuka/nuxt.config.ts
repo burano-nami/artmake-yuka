@@ -1,10 +1,3 @@
-// // https://nuxt.com/docs/api/configuration/nuxt-config
-// export default defineNuxtConfig({
-//   compatibilityDate: '2024-04-03',
-//   devtools: { enabled: true }
-// })
-
-
 export default defineNuxtConfig({
   ssr: false,
 
@@ -24,15 +17,15 @@ export default defineNuxtConfig({
       charset: 'utf-8',
       meta   : [
         { name: 'apple-mobile-web-app-title', content: 'アートメイク/YUKA NOMURA' },
-        { name: 'application-name', content: 'OneChatは誰かと気軽に会話ができるチャットサービスです。' },
-        { name: 'theme-color', content: '#' },
+        { name: 'application-name', content: 'アートメイク - YUKA NOMURA' },
+        { name: 'theme-color', content: '#619785' },
         { name: 'format-detection', content: 'telephone=no' },
         { name: 'viewport', content: 'width=device-width,initial-scale=1' },
-        { property: 'og:site_name', content: 'YUKA NOMURA' },
-        { property: 'og:description', content: 'YUKA NOMURA' },
-        { property: 'og:url', content: '' },
+        { property: 'og:site_name', content: 'アートメイク/YUKA NOMURA' },
+        { property: 'og:description', content: 'YUKA NOMURA/鏡が見たくなるアートメイク' },
+        // { property: 'og:url', content: '' }, URL決まったら設定
         { property: 'og:image', content: '/ogp.image.png' },
-        { property: 'twitter:card', content: '/ogp.X.png' },
+        { property: 'twitter:card', content: '/ogp.png' },
       ],
       link: [
         {
@@ -49,10 +42,10 @@ export default defineNuxtConfig({
           rel: 'stylesheet',
           href: 'https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&display=swap',
         },
-        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.png' },
         {
           rel  : 'apple-touch-icon',
-          href : '/apple-touch-icon.webp',
+          href : '/icon.png',
           sizes: '180x180',
         },
       ],
