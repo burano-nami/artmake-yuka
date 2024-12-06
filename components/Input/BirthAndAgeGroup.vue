@@ -16,7 +16,6 @@
           id="birthdate"
           name="birthdate"
           :class="$style.input"
-          :value="new Date(new Date().setFullYear(new Date().getFullYear() - 30)).toISOString().substr(0, 10)"
         />
       </div>
     </div>
