@@ -98,7 +98,8 @@ input,
 option,
 button,
 select {
-  background-color: transparent;
+  // background-color: transparent;
+  background-color: var(--white);
   border          : none;
   outline         : none;
   color           : var(--text-color);

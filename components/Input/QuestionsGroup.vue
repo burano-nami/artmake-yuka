@@ -44,7 +44,7 @@
               type="datetime-local"
               name="DesiredDate_1"
               :class="$style.input"
-              :value="new Date().toISOString().slice(0, 16)"
+              value=""
             />
           </div>
           <div  :class="$style.row">
@@ -53,7 +53,7 @@
               type="datetime-local"
               name="DesiredDate_2"
               :class="$style.input"
-              :value="new Date().toISOString().slice(0, 16)"
+              value=""
             />
           </div>
           <div :class="$style.row">
@@ -62,7 +62,7 @@
               type="datetime-local"
               name="DesiredDate_3"
               :class="$style.input"
-              :value="new Date().toISOString().slice(0, 16)"
+              value=""
             />
           </div>
         </div>

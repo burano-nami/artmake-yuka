@@ -7,13 +7,11 @@ const props = defineProps<{
   modelValue: boolean 
 }>()
 
-const familyName = ref<string>('')
-const firstName = ref<string>('')
-const familyNameKana = ref<string>('')
-const firstNameKana = ref<string>('')
+const fullName = ref<string>('')
+const fullNameKana = ref<string>('')
 
-watch([familyName, firstName, familyNameKana, firstNameKana], ([familyName, firstName, familyNameKana, firstNameKana]) => {
-  const isValid = familyName.trim().length > 0 && firstName.trim().length > 0 && familyNameKana.trim().length > 0 && firstNameKana.trim().length > 0
+watch([fullName, fullNameKana], ([fullName, fullNameKana]) => {
+  const isValid = fullName.trim().length > 0 && fullNameKana.trim().length > 0
   emit('update:modelValue', isValid)
 })
 
@@ -26,32 +24,15 @@ watch([familyName, firstName, familyNameKana, firstNameKana], ([familyName, firs
           <label :class="$style.label" for="name">お名前<span :class=$style.badge>必須</span></label>
         </div>
         <div :class="$style.input_group">
-          <div :class="$style.name_row">
-              <label :class="$style.name_label">
-                <div style="margin-inline-end: var(--sp-small);">姓</div>
-                <input 
-                  v-model="familyName"
-                  type="text"
-                  name="family-name"
-                  autocomplete="family-name"
-                  :class="$style.name_form"
-                  placeholder="山田"
-                  required
-                />
-              </label>
-              <label :class="$style.name_label">
-                <div style="margin-inline-end: var(--sp-small);">名</div>
-                <input 
-                  v-model="firstName"
-                  type="text"
-                  name="given-name"
-                  autocomplete="given-name"
-                  :class="$style.name_form"
-                  placeholder="花子"
-                  required
-                />
-              </label>
-            </div>
+          <input 
+            v-model="fullName"
+            :class="$style.input"
+            type="text"
+            name="full-name"
+            autocomplete="name"
+            placeholder="山田 花子"
+            required
+          />
         </div>
       </div>
       <!-- ふりがな -->
@@ -60,32 +41,15 @@ watch([familyName, firstName, familyNameKana, firstNameKana], ([familyName, firs
           <label :class="$style.label" for="kana">フリガナ<span :class=$style.badge>必須</span></label>
         </div>
         <div :class="$style.input_group">
-          <div :class="$style.name_row">
-            <label :class="$style.name_label">
-                <div style="margin-inline-end: var(--sp-small);">セイ</div>
-                <input 
-                  v-model="familyNameKana"
-                  type="text"
-                  name="family-name-kana"
-                  autocomplete="family-name"
-                  :class="$style.name_form"
-                  placeholder="ヤマダ"
-                  required
-                />
-            </label>
-            <label :class="$style.name_label">
-              <div style="margin-inline-end: var(--sp-small);">メイ</div>
-                <input 
-                  v-model="firstNameKana"
-                  type="text"
-                  name="given-name-kana"
-                  autocomplete="given-name"
-                  :class="$style.name_form"
-                  placeholder="ハナコ"
-                  required
-                />
-            </label>
-          </div>
+          <input 
+            v-model="fullNameKana"
+            :class="$style.input"
+            type="text"
+            name="given-name-kana"
+            autocomplete="given-name"
+            placeholder="ヤマダ ハナコ"
+            required
+          />
         </div>
       </div>
   </div>
@@ -138,41 +102,6 @@ watch([familyName, firstName, familyNameKana, firstNameKana], ([familyName, firs
   justify-content: space-between;
 }
 
-.row {
-  display              : grid;
-  grid-template-columns: auto 1fr 1fr;
-  align-items          : center;
-  margin-block         : var(--sp-small);
-  gap                  : var(--sp-small);
-
-  > label {
-    flex: 1 0 0%;
-  }
-}
-
-.name_row {
-  display     : flex;
-  align-items : center;
-  margin-block: var(--sp-small);
-  gap         : var(--sp-small);
-
-  > label {
-    flex       : 1 0 0%;
-    inline-size: 100%;
-  }
-
-  @include mediaScreen('mobile') {
-    flex-direction: column;
-    align-items   : flex-start;
-  }
-}
-
-.column {
-  display       : flex;
-  flex-direction: column;
-  margin-block  : var(--sp-small);
-}
-
 .badge {
   color           : var(--white);
   font-size       : var(--fs-smaller);
@@ -180,20 +109,5 @@ watch([familyName, firstName, familyNameKana, firstNameKana], ([familyName, firs
   align-items     : center;
   padding-inline  : var(--sp-min);
   background-color: var(--red);
-}
-
-.name_label {
-  display    : flex;
-  align-items: center;
-
-  > div {
-    flex : 0 0 auto;
-    width: 3em;
-  }
-}
-
-.name_form {
-  flex  : 1 1 0%;
-  border: 1px solid var(--light-gray);
 }
 </style>

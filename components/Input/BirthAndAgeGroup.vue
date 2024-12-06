@@ -16,6 +16,7 @@
           id="birthdate"
           name="birthdate"
           :class="$style.input"
+          :value="null"
         />
       </div>
     </div>
@@ -74,41 +75,13 @@
 .input {
   inline-size : 100%;
   margin-block: var(--sp-small);
-  appearance: none;
-  -webkit-appearance: none;
   border      : 1px solid var(--light-gray);
 }
 
 .label {
   inline-size: 100%;
   padding    : var(--sp-small);
-    /* background-color: antiquewhite; */
   display        : flex;
   justify-content: space-between;
-}
-
-.row {
-  display              : grid;
-  grid-template-columns: auto 1fr 1fr;
-  align-items          : center;
-  margin-block         : var(--sp-small);
-  gap                  : var(--sp-small);
-
-  > label {
-    flex: 1 0 0%;
-  }
-}
-
-.column {
-  display       : flex;
-  flex-direction: column;
-  margin-block  : var(--sp-small);
-}
-
-.badge {
-  color           : var(--white);
-  display         : flex;
-  padding         : calc(var(--sp-min) / 2 ) var(--sp-min);
-  background-color: #d9d9d9;
 }
 </style>
