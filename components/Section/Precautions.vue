@@ -20,7 +20,8 @@ const afterTreatment = [
 
 const isOpenRight = ref(false) // 開閉状態を管理
 const isOpenLeft = ref(false) // 開閉状態を管理
-const contentHeight = ref(0) // 動的な高さを管理
+const contentHeightRight = ref(0) // 動的な高さを管理
+const contentHeightLeft = ref(0) // 動的な高さを管理
 const contentRight = ref<HTMLElement | null>(null) // 対象のDOM要素を参照
 const contentLeft = ref<HTMLElement | null>(null) // 対象のDOM要素を参照
 
@@ -32,7 +33,7 @@ const toggleRightAccordion = async () => {
   // 次のDOM更新後に高さを取得
   await nextTick()
   if (contentRight.value) {
-    contentHeight.value = isOpenRight.value ? contentRight.value.scrollHeight : 0
+    contentHeightRight.value = isOpenRight.value ? contentRight.value.scrollHeight : 0
   }
 }
 
@@ -42,22 +43,22 @@ const toggleLeftAccordion = async () => {
   // 次のDOM更新後に高さを取得
   await nextTick()
   if (contentLeft.value) {
-    contentHeight.value = isOpenLeft.value ? contentLeft.value.scrollHeight : 0
+    contentHeightLeft.value = isOpenLeft.value ? contentLeft.value.scrollHeight : 0
   }
 }
 
 // 初期化時に高さを取得（必要なら）
-onMounted(() => {
-  if (contentRight.value) {
-    contentHeight.value = isOpenRight.value ? contentRight.value.scrollHeight : 0
-  }  if (contentLeft.value) {
-    contentHeight.value = isOpenLeft.value ? contentLeft.value.scrollHeight : 0
-  }
-})
+// onMounted(() => {
+//   if (contentRight.value) {
+//     contentHeightRight.value = isOpenRight.value ? contentRight.value.scrollHeight : 0
+//   }  if (contentLeft.value) {
+//     contentHeightLeft.value = isOpenLeft.value ? contentLeft.value.scrollHeight : 0
+//   }
+// })
 </script>
 
 <template>
-  <div :class="$style.precautions_container">
+  <SectionContainer :class="$style.precautions_container">
     <SectionTitle
       title="Precautions"
       jaTitle="注意点"
@@ -76,7 +77,7 @@ onMounted(() => {
         </button>
         <div
           ref="contentRight"
-          :style="{ height: isOpenRight ? `${contentHeight}px` : '0px' }"
+          :style="{ height: isOpenRight ? `${contentHeightRight}px` : '0px' }"
           :class="$style.accordion_content"
         >
           <p v-for="item in beforeTreatment" :key="item">{{ item }}</p>
@@ -97,14 +98,14 @@ onMounted(() => {
         </button>
         <div
           ref="contentLeft"
-          :style="{ height: isOpenLeft ? `${contentHeight}px` : '0px' }"
+          :style="{ height: isOpenLeft ? `${contentHeightLeft}px` : '0px' }"
           :class="$style.accordion_content"
         >
           <p v-for="item in afterTreatment" :key="item">{{ item }}</p>
         </div>
       </div>
     </div>
-  </div>
+  </SectionContainer>
 </template> 
 
 <style lang="scss" module>

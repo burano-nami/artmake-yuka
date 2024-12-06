@@ -113,11 +113,11 @@ const noteLists = [
   }
 
   &::before {
-    top: calc(var(--sp-medium) * -5);
+    top:var(--sp-medium);
   }
 
   &::after {
-    bottom: calc(var(--sp-medium) * -5);
+    bottom:var(--sp-medium);
   }
 
   @include mediaScreen('tablet') {

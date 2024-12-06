@@ -188,7 +188,7 @@ watch([familyName, firstName, familyNameKana, firstNameKana], ([familyName, firs
 
   > div {
     flex : 0 0 auto;
-    width: 8.33333333%;
+    width: 3em;
   }
 }
 

@@ -61,13 +61,4 @@
     z-index          : -1;
   }
 }
-
-
-
-</style>
-
-<style>
-#artmake, #results, #process, #menu, #access {
-  padding-top: 100px; 
-}
 </style>

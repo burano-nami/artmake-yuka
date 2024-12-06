@@ -13,9 +13,10 @@
       <div :class="$style.input_group">
         <input 
           type="date"
-          id="birthdate" 
+          id="birthdate"
           name="birthdate"
           :class="$style.input"
+          :value="new Date(new Date().setFullYear(new Date().getFullYear() - 30)).toISOString().substr(0, 10)"
         />
       </div>
     </div>
@@ -74,6 +75,8 @@
 .input {
   inline-size : 100%;
   margin-block: var(--sp-small);
+  appearance: none;
+  -webkit-appearance: none;
   border      : 1px solid var(--light-gray);
 }
 

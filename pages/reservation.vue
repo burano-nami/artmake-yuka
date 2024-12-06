@@ -5,7 +5,11 @@
 
 <template>
   <div :class="$style.main_container"> 
-    ご予約に際して、必ず下記の内容をご確認ください。
+    <p>
+      ご予約に際して、
+      <br :class="$style.mobile_only" />
+      必ず下記の内容をご確認ください。
+    </p>
     <SectionRisks />
     <SectionPrecautions />
     <SectionPolicy />
@@ -23,8 +27,21 @@
   align-items    : center;
   gap           : calc(var(--sp-larger) * 5);
 
+  > p {
+    margin-block-start: 200px;
+    text-align: center;
+  }
+
   @include mediaScreen('mobile') {
     gap: calc(var(--sp-larger) * 3);
   }
 }
+
+.mobile_only {
+    display: none;
+
+    @include mediaScreen('mobile') {
+      display: inline; 
+    }
+  }
 </style>

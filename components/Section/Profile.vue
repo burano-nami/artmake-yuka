@@ -39,6 +39,7 @@
 
 .profile_container {
   max-inline-size: var(--contents-lower-width);
+  padding-inline: var(--sp-medium);
 }
 
 .profile_image {

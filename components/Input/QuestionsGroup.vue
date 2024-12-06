@@ -40,15 +40,30 @@
         <div>
           <div :class="$style.row">
             <div class="">第一希望</div>
-            <input type="datetime-local" name="DesiredDate_1" :class="$style.input"/>
+            <input
+              type="datetime-local"
+              name="DesiredDate_1"
+              :class="$style.input"
+              :value="new Date().toISOString().slice(0, 16)"
+            />
           </div>
-          <div :class="$style.row">
+          <div  :class="$style.row">
             <div class="">第二希望</div>
-            <input type="datetime-local" name="DesiredDate_2" :class="$style.input"/>
+            <input
+              type="datetime-local"
+              name="DesiredDate_2"
+              :class="$style.input"
+              :value="new Date().toISOString().slice(0, 16)"
+            />
           </div>
           <div :class="$style.row">
             <div class="">第三希望</div>
-            <input type="datetime-local" name="DesiredDate_3" :class="$style.input"/>
+            <input
+              type="datetime-local"
+              name="DesiredDate_3"
+              :class="$style.input"
+              :value="new Date().toISOString().slice(0, 16)"
+            />
           </div>
         </div>
       </div>
@@ -231,7 +246,7 @@
 
 .row {
   display              : grid;
-  grid-template-columns: auto 1fr 1fr;
+  grid-template-columns: auto 1fr;
   align-items          : center;
   margin-block         : var(--sp-small);
   gap                  : var(--sp-small);
