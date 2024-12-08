@@ -84,16 +84,19 @@
 .form_group_wrapper {
   display: flex;
   gap    : var(--sp-medium);
+  margin-block-end: var(--sp-small);
 
   @include mediaScreen('mobile') {
     flex-direction: column;
+    gap    : 0;
   }
 }
 
 .label_group {
   flex       : 0 0 auto;
   inline-size: 33.33333333%;
-  border-top : 0.5px solid var(--gray);
+  font-weight: 400;
+  /* border-top : 0.5px solid var(--gray); */
 
   @include mediaScreen('mobile') {
     inline-size: 100%;
@@ -103,7 +106,7 @@
 .input_group {
   flex       : 0 0 auto;
   inline-size: 66.66666667%;
-  border-top : 0.5px solid var(--gray);
+  /* border-top : 0.5px solid var(--gray); */
 
   @include mediaScreen('mobile') {
     inline-size: 100%;

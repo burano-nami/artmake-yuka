@@ -1,7 +1,7 @@
 <script setup lang='ts'>
 const props = defineProps<{
     buttonText: string;
-    variant: 'default' | 'disabled' | 'line' | 'instagram';
+    variant: 'default' | 'disabled' | 'line' | 'instagram' | 'contact' ;
   }>()
 
   // 各リンクを設定
@@ -21,6 +21,14 @@ const urls = {
     >
       {{ buttonText }}
     </a>
+  </template>
+  <template  v-else-if="variant === 'contact'">
+    <button
+      type="submit"
+      :class="[$style.button, $style[variant]]"
+    >
+      {{ buttonText }}
+    </button>
   </template>
   <template v-else>
     <NuxtLink
@@ -54,7 +62,7 @@ const urls = {
   letter-spacing : var(--line-height-normal);
   cursor         : pointer;
 
-  &.default {
+  &.default, &.contact {
     background-image: var(--button-primary-color);
   }
 

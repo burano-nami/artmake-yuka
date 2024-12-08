@@ -69,7 +69,7 @@ const policies = [
 }
 
 .description {
-  inline-size       : var(--contents-lower-width);
+  inline-size: 100%;
   margin-block-start: var(--sp-large);
   text-align        : center;
 

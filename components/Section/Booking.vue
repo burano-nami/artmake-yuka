@@ -51,9 +51,8 @@ const isValid = computed(() => {
               名前、メールアドレスは必須項目です
             </p>
             <BaseButton
-              type="submit"
               buttonText="送信"
-              :variant="isValid? 'default' : 'disabled'"
+              :variant="isValid? 'contact' : 'disabled'"
             />
           </div>
         </div>

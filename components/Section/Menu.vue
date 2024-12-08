@@ -128,7 +128,7 @@ const noteLists = [
 .menu_list {
   display              : grid;
   grid-template-columns: 1fr 1fr;
-  gap                  : var(--sp-larger) calc(var(--sp-larger) * 2);
+  gap                  : var(--sp-larger);
   grid-template-areas  : 
     "eyebrow eyeline"
     "lip removal"
@@ -142,6 +142,10 @@ const noteLists = [
       "lip"
       "removal"
       "other";
+  }
+
+  > p {
+    letter-spacing: normal;
   }
 }
 

@@ -36,7 +36,7 @@ const isActive = ref(false)
       <BaseButton
         type="button"
         buttonText="ご予約はこちらから"
-        variant="primary"
+        variant="default"
       />
     </div>
   </div>
