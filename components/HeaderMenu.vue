@@ -65,7 +65,7 @@ const navItems = [
     inline-size: 100%;
   }
 
-  @include mediaScreen('mobile') {
+  @include mediaScreen('tablet') {
     opacity: 0;
     pointer-events: none;
   }

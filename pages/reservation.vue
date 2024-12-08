@@ -4,22 +4,32 @@
 </script> -->
 
 <template>
-  <div :class="$style.main_container"> 
+  <div :class="$style.reservation_container">
     <p>
       ご予約に際して、
       <br :class="$style.mobile_only" />
       必ず下記の内容をご確認ください。
     </p>
-    <SectionRisks />
-    <SectionPrecautions />
-    <SectionPolicy />
-    <SectionBooking />
+    <div :class="$style.main_container"> 
+      <SectionRisks />
+      <SectionPrecautions />
+      <SectionPolicy />
+      <SectionBooking />
+    </div>
   </div>
 </template>
 
 
 <style lang="scss" module>
 @use '~/assets/scss/mixin' as *;
+
+.reservation_container {
+  margin-block-start: calc(var(--sp-larger) * 4);
+
+  > p {
+    text-align: center;
+  }
+}
 
 .main_container {
   display        : flex;

@@ -3,7 +3,7 @@ const clinicInfo = [
   {
     name: '洗足整形・形成外科',
     schedule: [
-      { day: '水曜日', time: '午前9:00〜 午後14:00〜' }
+      { day: '水曜日', time: '午前9:00〜 <br>午後14:00〜' }
     ]
   },
   {
@@ -37,7 +37,7 @@ const clinicInfo = [
               :key="idx"
             >
               <td>{{ entry.day }}</td>
-              <td>{{ entry.time }}</td>
+              <td v-html="entry.time"></td>
             </tr>
           </tbody>
         </table>
@@ -47,6 +47,7 @@ const clinicInfo = [
       type="button"
       buttonText="公式LINEはこちら"
       variant="line"
+      :class="$style.button"
     />
   </div>
 </template>
@@ -57,31 +58,34 @@ const clinicInfo = [
 
 .booking_upper_container {
   inline-size     : 100%;
-  display         : flex;
+  display         : grid;
+  grid-template-columns: (1fr auto);
+  gap: var(--sp-medium);
   align-items     : center;
-  justify-content : space-around;
   max-inline-size : var(--contents-max-width);
   margin-block-end: calc(var(--sp-larger) * 2);
 
   @include mediaScreen('mobile') {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     gap           : var(--sp-large);
   }
 }
 
 .table_wrapper {
-  inline-size       : min(500px,100%);
+  /* inline-size: max(250px, 100%); */
   margin-block-start: var(--sp-large);
 }
 
 .table_title {
   color      : var(--black);
-  font-size  : var(--fs-semi-max);
+  font-size  : var(--fs-large);
   font-weight: 500;
   text-align : left;
+  margin-block-end: var(--sp-min);
 }
 
 .table  {
+  display: table;
   inline-size: 100%;
 
   th, td {
@@ -97,10 +101,13 @@ const clinicInfo = [
   }
 
   td {
-    font-size: var(--fs-large);
+    font-size: var(--fs-medium);
   }
 }
 
+.button {
+  margin-inline: auto;
+} 
 
 
 </style>

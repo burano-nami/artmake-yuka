@@ -13,11 +13,15 @@ const isActive = ref(false)
 <template>
   <div :class="[$style.menu_list, isActive ? $style.active : '']">
     <div :class="$style.contents_inner">
-      <div :class="$style.logo">
+      <NuxtLink
+        to="/"
+        :class="$style.logo"
+        @click="isActive = false"
+      >
         <img
           src="assets/images/logo_notext.png"
           alt="YUKA NOMURA"
-      </div>
+      </NuxtLink>
       <ul>
         <li
           v-for="item in navItems.filter(item => item.name !== 'HOME')"

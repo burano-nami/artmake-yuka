@@ -117,15 +117,15 @@ const steps = [
   &::before, &::after {
     content   : "";
     border-top: 1px solid;
-    width     : 3em;
+    width     : 3rem;
   }
 
   &::before {
-    margin-right: 1em;
+    margin-right: 1rem;
   }
 
   &::after {
-    margin-left: 1em;
+    margin-left: 1rem;
   }
 }
 </style>
