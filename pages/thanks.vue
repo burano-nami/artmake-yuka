@@ -5,7 +5,8 @@
     </div>
     <p>
       お問い合わせありがとうございます。<br>
-      ご予約内容を確認の上、<br :class="$style.mobile_only">ご連絡させていただきます。
+      内容を確認の上、<br :class="$style.mobile_only">
+      ご連絡させていただきます。
     </p>
   </SectionContainer>
 </template>

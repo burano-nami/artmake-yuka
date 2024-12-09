@@ -87,7 +87,8 @@ const navItems = [
 
   li {
     color      : var(--black);
-    font-size  : var(--fs-button);
+    font-size  : var(--fs-small);
+    letter-spacing: normal;
     font-weight: 400;
     display    : flex;
     gap        : var(--sp-large);

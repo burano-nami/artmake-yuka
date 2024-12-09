@@ -30,7 +30,7 @@ const eyeLineMenu = {
 }
 
 const RemovalMenu = {
-  menuTitle: 'アートメイク/くすみ 薬剤除去',
+  menuTitle: 'アートメイク・くすみ<br>薬剤除去',
   gridArea: 'removal',
   items: [
     { service: '1回(ブロック麻酔込み)', price: '¥35.000' },
@@ -69,7 +69,7 @@ const noteLists = [
         :key="menu.menuTitle"
         :class="[$style.menu_wrapper, $style[menu.gridArea]]"
       >
-        <div :class="$style.title">{{ menu.menuTitle }}</div>
+        <div :class="$style.title" v-html="menu.menuTitle"/>
         <div
           v-for="item in menu.items"
           :key="item.service"

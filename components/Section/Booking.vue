@@ -38,13 +38,13 @@ const isValid = computed(() => {
             施術にあたっての注意点、施術前後の注意点、キャンセルポリシーをご確認の上、<br :class="$style.mobile_hidden">
             ご納得いただいた方のみの施術となります。必ずご一読いただき、同意をおねがいします。
           </p>
-          <label>
+          <label :class="$style.consent">
             <input
               v-model="isChecked"
               type="checkbox"
               required
             >
-            すべての内容を確認し、同意いたしました。
+            <p>すべての内容を確認し、<br :class="$style.mobile_only">同意いたしました。</p>
           </label>
           <div>
             <p :class="$style.attention">
@@ -133,6 +133,24 @@ const isValid = computed(() => {
   font-size  : var(--fs-small);
   text-align: center;
   margin-block: var(--sp-small);
+}
+
+.consent {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-small);
+
+  @include mediaScreen('mobile') {
+    gap: var(--sp-medium);
+  }
+}
+
+.mobile_only {
+  display: none; 
+
+  @include mediaScreen('mobile') {
+    display: inline; 
+  }
 }
 
 </style>

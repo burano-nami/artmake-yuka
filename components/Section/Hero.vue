@@ -122,7 +122,8 @@ onBeforeUnmount(() => {
     font-weight: 400;
 
     @include mediaScreen('mobile') {
-      background-color: var(--white);
+      background-color    : var(--white);
+      padding-inline-start: var(--sp-medium);
     }
   }
 }

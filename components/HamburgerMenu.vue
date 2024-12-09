@@ -33,11 +33,6 @@ const isActive = ref(false)
           </NuxtLink>
         </li>
       </ul>
-      <BaseButton
-        type="button"
-        buttonText="ご予約はこちらから"
-        variant="default"
-      />
     </div>
   </div>
     <div
@@ -84,7 +79,7 @@ const isActive = ref(false)
   gap           : var(--sp-larger);
 
   li {
-    margin-block: var(--sp-medium);
+    margin-block: var(--sp-large);
   }
 }
 
