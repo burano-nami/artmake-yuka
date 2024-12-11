@@ -26,7 +26,7 @@ const isValid = computed(() => {
       <form
         :class="$style.form_container"
         method="post"
-        action="https://hyperform.jp/api/waZVnU3d"
+        action="https://hyperform.jp/api/ZRSN2nH0"
       >
         <InputNameGroup v-model="isNameValid"/>
         <InputBirthAndAgeGroup />

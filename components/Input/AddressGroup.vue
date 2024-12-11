@@ -18,7 +18,7 @@
       <div :class="$style.input_group">
         <input
           type="text"
-          name="postal-code"
+          name="postal_code"
           autocomplete="postal-code"
           placeholder="1234567"
           :class="$style.input"
@@ -40,7 +40,7 @@
           <div :class="$style.address_label">都道府県</div>
           <input
             type="text"
-            name="address-level1"
+            name="address_level1"
             id="address"
             autocomplete="address-level1"
             placeholder="東京都"
@@ -52,7 +52,7 @@
           <div :class="$style.address_label">市区町村</div>
           <input
             type="text"
-            name="address-level2"
+            name="address_level2"
             id="address"
             autocomplete="address-level2"
             placeholder="中央区"
@@ -64,7 +64,7 @@
           <div :class="$style.address_label">番地等</div>
           <input
             type="text"
-            name="address-line1"
+            name="address_line1"
             id="address"
             autocomplete="address-line1"
             placeholder="◯丁目◯番"

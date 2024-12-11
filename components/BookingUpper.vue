@@ -1,16 +1,16 @@
 <script setup lang="ts">
 const clinicInfo = [
   {
-    name: '洗足整形・形成外科',
-    schedule: [
-      { day: '水曜日', time: '午前9:00〜 <br>午後14:00〜' }
-    ]
-  },
-  {
     name: 'go-en.デンタルクリニック自由が丘',
     schedule: [
       { day: '月曜日〜金曜日', time: '午前9:00〜 午後19:00' },
       { day: '土曜日', time: '午前9:00〜 午後19:00' }
+    ]
+  },
+  {
+    name: 'さかもとクリニック',
+    schedule: [
+      { day: '土曜日', time: '午前12:00〜 <br>午後15:00〜' }
     ]
   }
 ]
@@ -57,13 +57,13 @@ const clinicInfo = [
 @use '~/assets/scss/mixin' as *;
 
 .booking_upper_container {
-  inline-size     : 100%;
-  display         : grid;
+  inline-size          : 100%;
+  display              : grid;
   grid-template-columns: (1fr auto);
-  gap: var(--sp-medium);
-  align-items     : center;
-  max-inline-size : var(--contents-max-width);
-  margin-block-end: calc(var(--sp-larger) * 2);
+  gap                  : var(--sp-larger);
+  align-items          : center;
+  max-inline-size      : var(--contents-max-width);
+  margin-block-end     : calc(var(--sp-larger) * 2);
 
   @include mediaScreen('mobile') {
     grid-template-columns: 1fr;

@@ -28,7 +28,7 @@ watch([fullName, fullNameKana], ([fullName, fullNameKana]) => {
             v-model="fullName"
             :class="$style.input"
             type="text"
-            name="full-name"
+            name="full_name"
             autocomplete="name"
             placeholder="山田 花子"
             required
@@ -45,7 +45,7 @@ watch([fullName, fullNameKana], ([fullName, fullNameKana]) => {
             v-model="fullNameKana"
             :class="$style.input"
             type="text"
-            name="given-name-kana"
+            name="full_name_kana"
             autocomplete="given-name"
             placeholder="ヤマダ ハナコ"
             required

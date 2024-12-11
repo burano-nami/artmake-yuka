@@ -16,17 +16,17 @@
             <input
               type="radio"
               name="clinic"
-              value="洗足整形・形成外科"
+              value="go-en.デンタルクリニック自由が丘"
             >
-            洗足整形・形成外科
+            go-en.デンタルクリニック自由が丘
           </label>
           <label>
             <input
               type="radio"
               name="clinic"
-              value="go-en.デンタルクリニック自由が丘"
+              value="さかもとクリニック"
             />
-            go-en.デンタルクリニック自由が丘
+            さかもとクリニック
           </label>
         </div>
       </div>
@@ -95,7 +95,7 @@
           <input 
             type="text"
             id="allergy"
-            name="allergy"
+            name="Allergy_info"
             placeholder="アルコール、薬剤、金属など"
             :class="$style.input"
           />
@@ -112,7 +112,7 @@
         <input
           type="text"
           id="medical-history"
-          name="medical-history"
+          name="medical_history"
           placeholder="口唇ヘルペスの既往が一度でもある方は必ずご記入ください"
           :class="$style.input"
         />
@@ -128,7 +128,7 @@
         <input
           type="text"
           id="art-make"
-          name="art-make_experience"
+          name="artmake_experience"
           placeholder="初めて/過去にあり(部位・回数)"
           :class="$style.input"
         />

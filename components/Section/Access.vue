@@ -1,20 +1,6 @@
 <script setup lang="ts">
 const clinics = [
   {
-    name: '洗足整形・形成外科',
-    address: '〒152-0012 東京都目黒区洗足2-7-15キューブ洗足2F',
-    access: [
-      '東急目黒線洗足駅より 徒歩1分',
-      '東急大井町線北千束駅より 徒歩10分'
-    ],
-    hours: [
-      '水曜日 午前9:00~ 午後14:00~',
-      '金曜日 午前9:00~ 午後14:00~',
-      '初回は水曜日、2回目以降は水曜日または金曜日が施術可能日になります。'
-    ],
-    mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3243.660764087316!2d139.6911549766224!3d35.611433772609956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188ad27d8be13d%3A0x175be4d3c8ab31aa!2z5rSX6Laz5pW05b2i5b2i5oiQ5aSW56eRIOebrum7kuWMug!5e0!3m2!1sja!2sjp!4v1731217557719!5m2!1sja!2sjp'
-  },
-  {
     name: 'go-en.デンタルクリニック自由が丘',
     address: '〒158-0083東京都世田谷区奥沢5-31-17 ARBOS 1-B',
     access: [
@@ -26,6 +12,17 @@ const clinics = [
       '月曜日〜金曜日、土曜日 午前9:00~午後19:00'
     ],
     mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3243.9281344275178!2d139.66514177662236!3d35.60483927261208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f59b4405681f%3A0x7789beda860f2f2d!2zZ28tZW4u44OH44Oz44K_44Or44Kv44Oq44OL44OD44Kv6Ieq55Sx44GM5LiY!5e0!3m2!1sja!2sjp!4v1731219006971!5m2!1sja!2sjp'
+  },
+  {
+    name: 'さかもとクリニック',
+    address: '〒145-0071 東京都大田区田園調布2-43-12',
+    access: [
+      '東急東横線 田園調布駅徒歩2分',
+    ],
+    hours: [
+      '土曜日 午前12:00~ 午後15:00~',
+    ],
+    mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6488.519221452489!2d139.6667422765211!3d35.59666217261472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f51675797889%3A0xf43a43af64927a08!2z44GV44GL44KC44Go44Kv44Oq44OL44OD44Kv!5e0!3m2!1sja!2sjp!4v1733837295826!5m2!1sja!2sjp'
   }
 ]
 </script>
@@ -133,7 +130,7 @@ const clinics = [
 }
 
 .clinic_hours {
-  /* font-size: var(--fs-small); */
+  padding-block-start: var(--sp-medium);
   font-style: normal;
   font-weight: 300;
 }
