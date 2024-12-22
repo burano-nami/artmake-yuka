@@ -23,11 +23,11 @@ export default defineNuxtConfig({
         { name: 'viewport', content: 'width=device-width,initial-scale=1' },
         { property: 'og:site_name', content: 'アートメイク/YUKA NOMURA' },
         { property: 'og:description', content: 'YUKA NOMURA/鏡が見たくなるアートメイク' },
-        { property: 'og:url', content: 'https://nami-no-blog.daa.jp/' }, //URL決まったら設定
+        { property: 'og:url', content: 'https://artmaketokyo.jp/' }, //URL決まったら設定
         { property: 'og:type', content: 'website' },
         { property: 'og:title', content: 'アートメイク - YUKA NOMURA' },
-        { property: 'og:image', content: 'https://nami-no-blog.daa.jp/ogp.png' },
-        { property: 'twitter:card', content: 'https://nami-no-blog.daa.jp/ogp.png' },
+        { property: 'og:image', content: 'https://artmaketokyo.jp/ogp.png' },
+        { property: 'twitter:card', content: 'https://artmaketokyo.jp/ogp.png' },
       ],
       link: [
         {
