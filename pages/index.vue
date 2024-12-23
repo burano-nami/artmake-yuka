@@ -4,7 +4,7 @@
 
 
 <template>
-  <div :class="$style.main_container">
+  <FadeInContainer :class="$style.main_container">
     <div :class="$style.hero_bg"> 
       <SectionHero />
     </div>
@@ -13,7 +13,7 @@
     <SectionProcess id="process"/>
     <SectionMenu id="menu"/>
     <SectionAccess id="access"/>
-  </div>
+  </FadeInContainer>
 </template>
 
 <style lang="scss" module>

@@ -1,10 +1,5 @@
-<!-- <script setup lang='ts'>
-
-
-</script> -->
-
 <template>
-  <div :class="$style.reservation_container">
+  <FadeInContainer :class="$style.reservation_container">
     <p>
       ご予約に際して、
       <br :class="$style.mobile_only" />
@@ -16,7 +11,7 @@
       <SectionPolicy />
       <SectionBooking />
     </div>
-  </div>
+  </FadeInContainer>
 </template>
 
 

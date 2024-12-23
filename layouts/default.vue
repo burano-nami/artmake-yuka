@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import FadeInContainer from '~/components/FadeInContainer.vue';
+
 const isHidden = ref(true);
 
 </script>
@@ -9,7 +11,7 @@ const isHidden = ref(true);
     <HamburgerMenu :class="$style.hamburger_menu"/>
     <div :class="$style.content">
       <slot />
-    </div>
+  </div>
     <div :class="$style.footer" />
   </main>
 </template>
