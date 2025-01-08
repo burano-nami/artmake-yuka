@@ -17,8 +17,8 @@ export default defineNuxtConfig({
       },
       charset: 'utf-8',
       meta   : [
-        { name: 'apple-mobile-web-app-title', content: 'アートメイク/YUKA NOMURA' },
-        { name: 'description', content: 'OneChatは気軽に会話ができるチャットサービスです。'},
+        { name: 'apple-mobile-web-app-title', content: 'アートメイク - YUKA NOMURA' },
+        { name: 'description', content: 'YUKA NOMURA/鏡が見たくなるアートメイク'},
         { name: 'application-name', content: 'アートメイク - YUKA NOMURA' },
         { name: 'theme-color', content: '#619785' },
         { name: 'format-detection', content: 'telephone=no' },

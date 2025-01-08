@@ -20,7 +20,7 @@ onMounted(() => {
   <SectionContainer :class="$style.risks_container">
     <SectionTitle
       title="Risks"
-      jaTitle="リスクと副作用等"
+      jaTitle="リスクと副作用"
     />
       <div :class="$style.risks_contents">
         <div :class="$style.tab_button_wrap">
@@ -62,10 +62,10 @@ onMounted(() => {
 }
 
 .risks_contents {
-  max-width     : var(--section-max-width);
-  margin-inline : auto;
-  margin-bottom : var(--decoration-height);
-  margin-block: var(--sp-larger);
+  max-width         : var(--section-max-width);
+  margin-inline     : auto;
+  margin-bottom     : var(--decoration-height);
+  margin-block-start: var(--sp-larger);
 }
 
 .tab_button_wrap {

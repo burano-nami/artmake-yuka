@@ -9,6 +9,10 @@ const urls = {
   instagram: 'https://www.instagram.com/nomura_artmake/', 
   line: 'https://lin.ee/QxVySL9' // LINEのリンク
 }
+
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+}
 </script>
 
 <template>
@@ -34,6 +38,7 @@ const urls = {
     <NuxtLink
       to="/reservation"
       :class="[$style.button, $style[variant]]"
+      @click.native="scrollToTop"
     >
       {{ buttonText }}
     </NuxtLink>

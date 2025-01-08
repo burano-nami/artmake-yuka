@@ -18,8 +18,6 @@ const policies = [
     ],
   },
 ]
-
-
 </script>
 
 <template>
@@ -79,9 +77,9 @@ const policies = [
 }
 
 .pricing_container {
-  inline-size : 100%;
-  margin-block: var(--sp-larger);
-  position    : relative;
+  inline-size       : 100%;
+  margin-block-start: var(--sp-larger);
+  position          : relative;
 }
 
   /* 各セクション */
