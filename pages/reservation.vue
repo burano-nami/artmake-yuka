@@ -3,13 +3,13 @@
     <div :class="$style.link">
       <strong>ご予約前に必ず以下をご確認ください。</strong>
       <ul>
-        <li><NuxtLink :class="$style.menu" to="#risks">1. リスクと副作用</NuxtLink></li>
-        <li><NuxtLink :class="$style.menu" to="#precautions">2. 注意点</NuxtLink></li>
-        <li><NuxtLink :class="$style.menu" to="#policy">3. キャンセルポリシー</NuxtLink></li>
+        <li>1. リスクと副作用</li>
+        <li>2. 注意点</li>
+        <li>3. キャンセルポリシー</li>
       </ul>
       <p>
         すべての内容をご確認いただいたうえで、<br>
-        下部ページの
+        ページ下部の
         <NuxtLink 
           to="#booking"
           :class="$style.booking_link"
@@ -18,9 +18,9 @@
       </p>
     </div>
     <div :class="$style.main_container"> 
-      <SectionRisks id="risks"/>
-      <SectionPrecautions id="precautions"/>
-      <SectionPolicy id="policy"/>
+      <SectionRisks />
+      <SectionPrecautions />
+      <SectionPolicy />
       <SectionBooking id="booking"/>
     </div>
   </FadeInContainer>
@@ -72,23 +72,6 @@
     flex-direction: column;
     gap           : var(--sp-medium);
     margin-block  : var(--sp-large);
-  }
-}
-
-.menu {
-  position   : relative;
-
-  &:hover::before {
-    content                  : '';
-    inline-size              : 100%;
-    height                   : 1px;
-    background-color         : var(--gold);
-    position                 : absolute;
-    bottom                   : -5px;
-    animation-name           : hoverAnime;
-    animation-duration       : 0.2s;
-    animation-timing-function: ease;
-    animation-fill-mode      : forwards;
   }
 }
 
