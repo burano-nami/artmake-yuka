@@ -16,8 +16,7 @@ const isValid = computed(() => {
     />
     <p :class="$style.description">
       ご予約は公式LINEから承ります。下記リンクでお友達登録→「ご予約」をタップ→必要事項を入力→送信してください。
-      確認後、順次返信いたします。ご希望の日時が取れない場合もあるため、第三希望までお知らせください。LINE以外を
-      ご利用の方は、下記の予約フォームからご連絡ください。
+      確認後、順次返信いたします。ご希望の日時が取れない場合もあるため、第三希望までお知らせください。LINE以外をご利用の方は、下記の予約フォームからご連絡ください。
     </p>
     <BookingUpper />
     <!-- フォーム移植中 -->
@@ -35,7 +34,7 @@ const isValid = computed(() => {
         <InputQuestionsGroup />
         <div :class="$style.submit_wrapper">
           <p :class="$style.description_booking">
-            施術にあたっての注意点、施術前後の注意点、キャンセルポリシーをご確認の上、<br :class="$style.mobile_hidden">
+            リスクと副作用、注意点、キャンセルポリシーをご確認の上、<br :class="$style.mobile_hidden">
             ご納得いただいた方のみの施術となります。必ずご一読いただき、同意をおねがいします。
           </p>
           <label :class="$style.consent">
