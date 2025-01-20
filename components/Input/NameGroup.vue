@@ -61,7 +61,7 @@ watch([fullName, fullNameKana], ([fullName, fullNameKana]) => {
 
 .form_group_wrapper {
   display: flex;
-  gap    : var(--sp-medium);
+  /* gap    : var(--sp-medium); */
   margin-block-end: var(--sp-small);
 
   @include mediaScreen('mobile') {

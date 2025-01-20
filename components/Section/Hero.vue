@@ -136,7 +136,7 @@ onBeforeUnmount(() => {
   padding-inline: var(--sp-larger);
 
   @include mediaScreen('tablet') {
-    padding-inline: var(--sp-medium);
+    padding-inline: var(--sp-large);
   }
 }
 

@@ -10,55 +10,53 @@ const isValid = computed(() => {
 
 <template>
   <SectionContainer :class="$style.booking_container">
-    <FadeInContainer :class="$style.fade_in">
-      <SectionTitle
-        title="Booking"
-        jaTitle="ご予約"
-      />
-      <p :class="$style.description">
-        ご予約は公式LINEから承ります。下記リンクでお友達登録→「ご予約」をタップ→必要事項を入力→送信してください。
-        確認後、順次返信いたします。ご希望の日時が取れない場合もあるため、第三希望までお知らせください。LINE以外をご利用の方は、下記の予約フォームからご連絡ください。
-      </p>
-      <BookingUpper />
-      <!-- フォーム移植中 -->
-      <div :class="$style.booking_form_container">
-        <p :class="$style.text">LINEをご利用でない方はこちら</p>
-        <form
-          :class="$style.form_container"
-          method="post"
-          action="https://hyperform.jp/api/ZRSN2nH0"
-        >
-          <InputNameGroup v-model="isNameValid"/>
-          <InputBirthAndAgeGroup />
-          <InputAddressGroup />
-          <InputContactGroup  v-model="isEmailValid"/>
-          <InputQuestionsGroup />
-          <div :class="$style.submit_wrapper">
-            <p :class="$style.description_booking">
-              リスクと副作用、注意点、キャンセルポリシーをご確認の上、<br :class="$style.mobile_hidden">
-              ご納得いただいた方のみの施術となります。必ずご一読いただき、同意をおねがいします。
+    <SectionTitle
+      title="Booking"
+      jaTitle="ご予約"
+    />
+    <p :class="$style.description">
+      ご予約は公式LINEから承ります。下記リンクでお友達登録→「ご予約」をタップ→必要事項を入力→送信してください。
+      確認後、順次返信いたします。ご希望の日時が取れない場合もあるため、第三希望までお知らせください。LINE以外をご利用の方は、下記の予約フォームからご連絡ください。
+    </p>
+    <BookingUpper />
+    <!-- フォーム移植中 -->
+    <div :class="$style.booking_form_container">
+      <p :class="$style.text">LINEをご利用でない方はこちら</p>
+      <form
+        :class="$style.form_container"
+        method="post"
+        action="https://hyperform.jp/api/9rKDVPb9"
+      >
+        <InputNameGroup v-model="isNameValid"/>
+        <InputBirthAndAgeGroup />
+        <InputAddressGroup />
+        <InputContactGroup  v-model="isEmailValid"/>
+        <InputQuestionsGroup />
+        <div :class="$style.submit_wrapper">
+          <p :class="$style.description_booking">
+            リスクと副作用、注意点、キャンセルポリシーをご確認の上、<br :class="$style.mobile_hidden">
+            ご納得いただいた方のみの施術となります。必ずご一読いただき、同意をおねがいします。
+          </p>
+          <label :class="$style.consent">
+            <input
+              v-model="isChecked"
+              type="checkbox"
+              required
+            >
+            <p>すべての内容を確認し、<br :class="$style.mobile_only">同意いたしました。</p>
+          </label>
+          <div>
+            <p :class="$style.attention">
+              名前、メールアドレスは必須項目です
             </p>
-            <label :class="$style.consent">
-              <input
-                v-model="isChecked"
-                type="checkbox"
-                required
-              >
-              <p>すべての内容を確認し、<br :class="$style.mobile_only">同意いたしました。</p>
-            </label>
-            <div>
-              <p :class="$style.attention">
-                名前、メールアドレスは必須項目です
-              </p>
-              <BaseButton
-                buttonText="送信"
-                :variant="isValid? 'contact' : 'disabled'"
-              />
-            </div>
+            <BaseButton
+              buttonText="送信"
+              :variant="isValid? 'contact' : 'disabled'"
+            />
           </div>
-        </form>
-      </div>
-    </FadeInContainer>
+        </div>
+      </form>
+    </div>
   </SectionContainer>
 </template>
 
@@ -76,6 +74,7 @@ const isValid = computed(() => {
 .description {
   inline-size       : var(--contents-lower-width);
   margin-block-start: var(--sp-large);
+  inline-size: 100%;
 
   @include mediaScreen('mobile') {
     inline-size: 100%;
@@ -112,7 +111,7 @@ const isValid = computed(() => {
   flex-direction : column;
   align-items    : center;
   max-inline-size: var(--contents-max-width);
-  inline-size: 100%;
+  inline-size    : 100%;
 }
 
 .text {

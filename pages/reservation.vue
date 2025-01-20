@@ -60,7 +60,7 @@
   align-items     : center;
   font-size       : var(--font-size-small);
   margin-block-end: calc(var(--sp-larger) * 2);
-  padding-inline  : var(--sp-medium);
+  padding-inline  : var(--sp-large);
 
   > strong {
     font-weight: 600;

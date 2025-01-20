@@ -78,6 +78,7 @@ const clinics = [
   display        : flex;
   flex-direction : column;
   align-items    : center;
+  inline-size    : 100%;
 }
 
 .description {

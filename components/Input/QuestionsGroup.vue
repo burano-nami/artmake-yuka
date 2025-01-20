@@ -113,7 +113,7 @@
           type="text"
           id="medical-history"
           name="medical_history"
-          placeholder="口唇ヘルペスの既往が一度でもある方は必ずご記入ください"
+          placeholder="口唇ヘルペス歴がある方はご記入ください"
           :class="$style.input"
         />
       </div>
@@ -145,7 +145,7 @@
           type="text"
           id="design"
           name="design"
-          placeholder="わからない場合はおまかせ、またはご相談とご記入ください"
+          placeholder="不明な場合はお任せや相談とご記入ください"
           :class="$style.input"
         />
       </div>
@@ -202,7 +202,7 @@
 
 .form_group_wrapper {
   display: flex;
-  gap    : var(--sp-medium);
+  /* gap    : var(--sp-medium); */
   margin-block-end: var(--sp-small);
 
   @include mediaScreen('mobile') {

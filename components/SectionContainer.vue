@@ -12,7 +12,7 @@
   padding-block: calc(var(--sp-larger) * 2);
 
   @include mediaScreen('tablet') {
-    padding-inline: var(--sp-medium);
+    padding-inline: var(--sp-large);
   }
 }
 </style>

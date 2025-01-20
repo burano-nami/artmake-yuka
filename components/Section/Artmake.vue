@@ -52,15 +52,17 @@
 @use '~/assets/scss/mixin' as *;
 
 .artmake_container {
+  max-inline-size: var(--contents-max-width);
   display        : flex;
   flex-direction : column;
   align-items    : center;
-  max-inline-size: var(--contents-max-width);
   gap            : var(--sp-large);
+  inline-size    : 100%;
 }
 
 .description {
   inline-size       : var(--contents-lower-width);
+  inline-size    : 100%;
   margin-block-start: var(--sp-large);
 
   @include mediaScreen('mobile') {
@@ -74,8 +76,6 @@
     inline-size: 100%;
   }
 }
-
-
 
 /* 真ん中の層 */
 .middle_container {
@@ -119,8 +119,6 @@
   flex-direction: column;
   align-items: center;
   gap: var(--sp-small);
-  /* width: 484px; */
-  /* height: 333px; */
   padding: var(--sp-large);
   border-radius: 15px;
   background: var(--pale-green);
@@ -130,5 +128,4 @@
     font-weight: 400;
   }
 }
-
 </style>
