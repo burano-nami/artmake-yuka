@@ -1,8 +1,3 @@
-<!-- <script setup lang='ts'>
-
-
-</script> -->
-
 <template>
   <div :class="$style.results_container">
 
@@ -72,12 +67,12 @@
   inline-size          : fit-content;
   display              : grid;
   gap                  : var(--sp-small);
-  grid-template-columns: 1fr 380px; 
+  grid-template-columns: 1fr 380px;
   grid-template-areas  : "title image";
 
   &:nth-child(even) {
-    grid-template-columns: 380px 1fr; 
-    grid-template-areas: "image title";
+    grid-template-columns: 380px 1fr;
+    grid-template-areas  : "image title";
   }
 
   @include mediaScreen('tablet') {
@@ -85,7 +80,7 @@
     grid-template-columns: 1fr 250px;
 
     &:nth-child(even) {
-      grid-template-columns: 250px 1fr; 
+      grid-template-columns: 250px 1fr;
     }
   }
 
@@ -94,7 +89,7 @@
     grid-template-columns: 1fr 200px;
 
     &:nth-child(even) {
-      grid-template-areas: "title image";
+      grid-template-areas  : "title image";
       grid-template-columns: 1fr 200px;
     }
   }

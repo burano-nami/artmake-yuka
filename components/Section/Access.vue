@@ -9,7 +9,7 @@ const clinics = [
       '東急大井町線九品仏駅 徒歩10分'
     ],
     hours: [
-      '月曜日〜金曜日、土曜日 午前9:00~午後19:00'
+      '月曜日〜土曜日  午前9:00〜午後19:00'
     ],
     mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3243.9281344275178!2d139.66514177662236!3d35.60483927261208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f59b4405681f%3A0x7789beda860f2f2d!2zZ28tZW4u44OH44Oz44K_44Or44Kv44Oq44OL44OD44Kv6Ieq55Sx44GM5LiY!5e0!3m2!1sja!2sjp!4v1731219006971!5m2!1sja!2sjp'
   },
@@ -20,7 +20,7 @@ const clinics = [
       '東急東横線田園調布駅徒歩2分',
     ],
     hours: [
-      '土曜日 午前12:00~ 午後15:00~',
+      '土曜日  午前12:00〜 / 午後15:00〜',
     ],
     mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6488.519221452489!2d139.6667422765211!3d35.59666217261472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f51675797889%3A0xf43a43af64927a08!2z44GV44GL44KC44Go44Kv44Oq44OL44OD44Kv!5e0!3m2!1sja!2sjp!4v1733837295826!5m2!1sja!2sjp'
   }
@@ -82,10 +82,10 @@ const clinics = [
 }
 
 .description {
-  inline-size: var(--contents-lower-width);
+  inline-size       : var(--contents-lower-width);
   margin-block-start: var(--sp-large);
-  text-align: center;
-  margin-block-end: var(--sp-larger);
+  text-align        : center;
+  margin-block-end  : var(--sp-larger);
 
   @include mediaScreen('mobile') {
     inline-size: 100%;
@@ -93,15 +93,15 @@ const clinics = [
 }
 
 .contents_wrapper {
-  display: flex;
+  display       : flex;
   flex-direction: column;
-  gap: calc(var(--sp-larger) * 1.5);
+  gap           : calc(var(--sp-larger) * 1.5);
 }
 
 .clinic_wrapper {
-  display: grid;
+  display              : grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--sp-medium);
+  gap                  : var(--sp-medium);
 
   @include mediaScreen('mobile') {
     grid-template-columns: 1fr;
@@ -109,46 +109,46 @@ const clinics = [
 }
 
 .clinic_info {
-  display: grid;
-  grid-template-rows: auto 1.5fr 1fr; 
+  display           : grid;
+  grid-template-rows: auto 1.5fr 1fr;
 
   @include mediaScreen('mobile') {
-    display: flex;
+    display       : flex;
     flex-direction: column;
-    gap: var(--sp-medium);
+    gap           : var(--sp-medium);
   }
 }
 
 .clinic_name {
-  color: var(--black);
-  font-size: var(--fs-max);
+  color      : var(--black);
+  font-size  : var(--fs-max);
   font-weight: 400;
 }
 
 .clinic_addres {
-  font-style: normal;
+  font-style : normal;
   font-weight: 300;
 }
 
 .clinic_hours {
   padding-block-start: var(--sp-medium);
-  font-style: normal;
-  font-weight: 300;
+  font-style         : normal;
+  font-weight        : 300;
 }
 
 .clinic_map {
-  position: relative;
-  width: 100%;
+  position   : relative;
+  width      : 100%;
   padding-top: 75%;
-  /* 16:9のアスペクト比 */
+    /* 16:9のアスペクト比 */
   height: 0;
     
   iframe {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top     : 0;
+    left    : 0;
+    width   : 100%;
+    height  : 100%;
   }
 }
 </style>

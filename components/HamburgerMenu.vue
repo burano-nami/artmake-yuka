@@ -94,7 +94,7 @@ const isActive = ref(false)
 .btn {
   position       : fixed;
   top            : calc(var(--sp-medium)* 1.8);
-  left          : var(--sp-large);
+  left           : var(--sp-large);
   inline-size    : 30px;
   block-size     : 20px;
   display        : none;

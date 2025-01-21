@@ -49,7 +49,6 @@ const scrollToTop = () => {
 <style lang="scss" module>
 @use '~/assets/scss/mixin' as *;
 
-
 .button {
   inline-size    : 300px;
   block-size     : 50px;

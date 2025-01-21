@@ -1,9 +1,3 @@
-
-<!-- <script setup lang='ts'>
-
-
-</script> -->
-
 <template>
   <SectionContainer :class="$style.artmake_container">
     <SectionTitle
@@ -62,7 +56,7 @@
 
 .description {
   inline-size       : var(--contents-lower-width);
-  inline-size    : 100%;
+  inline-size       : 100%;
   margin-block-start: var(--sp-large);
 
   @include mediaScreen('mobile') {
@@ -105,9 +99,9 @@
 
 /* 下の層 */
 .card_contents {
-  display: grid;
+  display              : grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--sp-large,);
+  gap                  : var(--sp-large,);
 
   @include mediaScreen('mobile') {
     grid-template-columns: 1fr;
@@ -115,16 +109,16 @@
 }
 
 .card {
-  display: flex;
+  display       : flex;
   flex-direction: column;
-  align-items: center;
-  gap: var(--sp-small);
-  padding: var(--sp-large);
-  border-radius: 15px;
-  background: var(--pale-green);
+  align-items   : center;
+  gap           : var(--sp-small);
+  padding       : var(--sp-large);
+  border-radius : 15px;
+  background    : var(--pale-green);
 
   h3 {
-    font-size: var(--fs-larger);
+    font-size  : var(--fs-larger);
     font-weight: 400;
   }
 }

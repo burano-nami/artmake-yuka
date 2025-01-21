@@ -98,13 +98,13 @@ onBeforeUnmount(() => {
 
   @include mediaScreen('mobile') {
     inline-size: auto;
-    top       : auto;
-    bottom    : 15%;
-    right     : 0;
-    left      : auto;
-    transform : translateY(0);
-    padding   : 0;
-    text-align: end;
+    top        : auto;
+    bottom     : 15%;
+    right      : 0;
+    left       : auto;
+    transform  : translateY(0);
+    padding    : 0;
+    text-align : end;
   }
 
 
@@ -130,10 +130,10 @@ onBeforeUnmount(() => {
 
 .sub_hero_container {
   max-inline-size: var(--desktop-max-width );
-  display           : flex;
-  flex-direction    : column;
-  align-items       : center;
-  padding-inline: var(--sp-larger);
+  display        : flex;
+  flex-direction : column;
+  align-items    : center;
+  padding-inline : var(--sp-larger);
 
   @include mediaScreen('tablet') {
     padding-inline: var(--sp-large);
@@ -149,8 +149,6 @@ onBeforeUnmount(() => {
   gap             : calc(var(--sp-larger) * 1.5);
   margin-inline   : var(--sp-medium);
   margin-block    : calc(var(--sp-larger) * 1.2);
-  padding-block:  calc(var(--sp-large) * 2);
+  padding-block   : calc(var(--sp-large) * 2);
 }
-
-
 </style>

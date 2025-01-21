@@ -39,14 +39,14 @@
 }
 
 .main_container {
-  display        : flex;
-  flex-direction : column;
-  align-items    : center;
+  display       : flex;
+  flex-direction: column;
+  align-items   : center;
   gap           : calc(var(--sp-larger) * 5);
 
   > p {
     margin-block-start: 200px;
-    text-align: center;
+    text-align        : center;
   }
 
   @include mediaScreen('mobile') {
@@ -64,7 +64,7 @@
 
   > strong {
     font-weight: 600;
-    color: var(--gray);
+    color      : var(--gray);
   }
 
   > ul {
@@ -77,7 +77,7 @@
 
 .booking_link {
   font-weight: 400;
-  color: var(--gold);
+  color      : var(--gold);
   
   &:hover {
     opacity: 0.6;

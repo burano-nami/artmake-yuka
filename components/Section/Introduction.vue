@@ -9,8 +9,6 @@ const listItems = [
   'もともと左右差があり気になる',
   '唇の血色が悪い、くすみが気になる、顔色が悪く見える'
 ]
-
-
 </script>
 
 <template>
@@ -64,16 +62,16 @@ const listItems = [
   gap           : var(--sp-medium, 16px);
 
   li {
-    position: relative;
-    padding-inline-start : var(--sp-large); 
+    position            : relative;
+    padding-inline-start: var(--sp-large);
 
     &::before {
-      content: 'check';
+      content    : 'check';
       font-family: 'Material Symbols Outlined';
-      position: absolute;
-      left: 0;
-      font-size: var(--fs-medium); 
-      color: var(--dark-green);
+      position   : absolute;
+      left       : 0;
+      font-size  : var(--fs-medium);
+      color      : var(--dark-green);
     }
   }
 }

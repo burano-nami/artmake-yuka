@@ -1,8 +1,3 @@
-<!-- <script setup lang='ts'>
-
-
-</script> -->
-
 <template>
   <div :class=$style.profile_container>
     <div :class="$style.upper_section">
@@ -22,8 +17,6 @@
         </ul>
       </div>
     </div>
-
-
     <p :class="$style.profile_description">
       23年間の総合病院での看護師経験を活かし、美しさだけでなく安全性や衛生面にも配慮した、痛みの少ない施術を提供します。特に自然でふんわりとした眉デザインが得意で、ご年齢に合わせた仕上がりを提案いたします。退色はしても消えないアートメイクです。お客様が安心して施術を受けられることを大切にしています。
     </p>
@@ -36,7 +29,7 @@
 
 .profile_container {
   max-inline-size: var(--contents-lower-width);
-  padding-inline: var(--sp-medium);
+  padding-inline : var(--sp-medium);
 }
 
 .profile_image {

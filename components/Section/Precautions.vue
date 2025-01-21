@@ -46,15 +46,6 @@ const toggleLeftAccordion = async () => {
     contentHeightLeft.value = isOpenLeft.value ? contentLeft.value.scrollHeight : 0
   }
 }
-
-// 初期化時に高さを取得（必要なら）
-// onMounted(() => {
-//   if (contentRight.value) {
-//     contentHeightRight.value = isOpenRight.value ? contentRight.value.scrollHeight : 0
-//   }  if (contentLeft.value) {
-//     contentHeightLeft.value = isOpenLeft.value ? contentLeft.value.scrollHeight : 0
-//   }
-// })
 </script>
 
 <template>
@@ -112,11 +103,11 @@ const toggleLeftAccordion = async () => {
 @use '~/assets/scss/mixin' as *;
 
 .precautions_container {
-  max-inline-size : var(--desktop-max-width);
-  inline-size     : 100%;
-  display         : flex;
-  flex-direction  : column;
-  gap: calc(var(--sp-larger) * 2);
+  max-inline-size: var(--desktop-max-width);
+  inline-size    : 100%;
+  display        : flex;
+  flex-direction : column;
+  gap            : calc(var(--sp-larger) * 2);
 }
 
 .wrapper {
@@ -124,7 +115,6 @@ const toggleLeftAccordion = async () => {
   display       : flex;
   flex-direction: column;
   align-items   : flex-end;
-
 }
 
 .image {
@@ -207,9 +197,9 @@ const toggleLeftAccordion = async () => {
 }
 
 .accordion_content {
-  overflow: hidden;
-  height: 0; 
-  transition: height 0.3s ease; 
+  overflow        : hidden;
+  height          : 0;
+  transition      : height 0.3s ease;
   background-color: var(--white);
 
   > p {

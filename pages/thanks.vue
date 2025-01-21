@@ -16,8 +16,8 @@
 @use '~/assets/scss/mixin' as *;
 
 .thanks_container {
-  inline-size: 100%;
-  block-size : 100%;
+  inline-size    : 100%;
+  block-size     : 100%;
   display        : flex;
   align-items    : center;
   justify-content: center;
@@ -37,10 +37,10 @@
 
 
 .mobile_only {
-  display: none; 
+  display: none;
 
-    @include mediaScreen('mobile') {
-      display: inline; 
-    }
+  @include mediaScreen('mobile') {
+    display: inline;
   }
+}
 </style>

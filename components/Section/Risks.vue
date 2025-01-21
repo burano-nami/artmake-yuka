@@ -54,11 +54,10 @@ onMounted(() => {
 <style lang = "scss" module>
 @use '~/assets/scss/mixin' as *;
 
-
 .risks_container {
   max-inline-size: var(--contents-max-width);
-  inline-size: 100%;       
-  position        : relative;
+  inline-size    : 100%;
+  position       : relative;
 }
 
 .risks_contents {
@@ -69,10 +68,10 @@ onMounted(() => {
 }
 
 .tab_button_wrap {
-  display        : flex;
-  justify-content: space-between;
-  gap            : var(--sp-min);
-  padding-block-start  : var(--sp-medium);
+  display            : flex;
+  justify-content    : space-between;
+  gap                : var(--sp-min);
+  padding-block-start: var(--sp-medium);
 }
 
 .tab_button {

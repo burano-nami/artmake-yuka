@@ -1,8 +1,5 @@
 <script lang="ts" setup>
-import FadeInContainer from '~/components/FadeInContainer.vue';
-
 const isHidden = ref(true);
-
 </script>
 
 <template>
@@ -19,8 +16,8 @@ const isHidden = ref(true);
 <style lang="scss" module>
 @use '~/assets/scss/mixin' as *;
 main {
-  min-block-size : 100vh;
-  display: flex; /* コンテナ全体をフレックスに */
+  min-block-size: 100vh;
+  display       : flex;    /* コンテナ全体をフレックスに */
   flex-direction: column;
 }
 
@@ -32,9 +29,9 @@ main {
 }
 
 .content {
-  flex:1;
-  display: flex;
-  flex-direction: column;
+  flex           : 1;
+  display        : flex;
+  flex-direction : column;
   justify-content: center;
 }
 

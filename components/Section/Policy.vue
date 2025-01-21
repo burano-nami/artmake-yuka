@@ -67,7 +67,7 @@ const policies = [
 }
 
 .description {
-  inline-size: 100%;
+  inline-size       : 100%;
   margin-block-start: var(--sp-large);
   text-align        : center;
 
@@ -99,13 +99,12 @@ const policies = [
 
 /* テーブルスタイル */
 .table {
-  display: grid;
+  display              : grid;
   grid-template-columns: auto 30%;
 
   @include mediaScreen('mobile') {
     grid-template-columns: 1fr;
-    margin-block : var(--sp-medium);
-    /* border-bottom: 1px solid var(--light-gray); */
+    margin-block         : var(--sp-medium);
   }
 }
 
@@ -113,14 +112,14 @@ const policies = [
   padding: calc(var(--sp-small) * 1.5);
 
   @include mediaScreen('mobile') {
-    padding-block : 0;
+    padding-block: 0;
   }
 }
 
 .notice {
 
   @include mediaScreen('mobile') {
-    padding-block : calc(var(--sp-small) * 1.5);
+    padding-block: calc(var(--sp-small) * 1.5);
   }
 }
 </style>

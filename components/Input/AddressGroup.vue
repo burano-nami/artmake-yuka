@@ -1,8 +1,3 @@
-<script setup lang='ts'>
-
-
-</script>
-
 <template>
   <div>
     <!-- 郵便番号 -->
@@ -82,13 +77,12 @@
 @use '~/assets/scss/mixin' as *;
 
 .form_group_wrapper {
-  display: flex;
-  /* gap    : var(--sp-medium); */
+  display         : flex;
   margin-block-end: var(--sp-small);
 
   @include mediaScreen('mobile') {
     flex-direction: column;
-    gap    : 0;
+    gap           : 0;
   }
 }
 
@@ -96,7 +90,6 @@
   flex       : 0 0 auto;
   inline-size: 33.33333333%;
   font-weight: 400;
-  /* border-top : 0.5px solid var(--gray); */
 
   @include mediaScreen('mobile') {
     inline-size: 100%;
@@ -106,7 +99,6 @@
 .input_group {
   flex       : 0 0 auto;
   inline-size: 66.66666667%;
-  /* border-top : 0.5px solid var(--gray); */
 
   @include mediaScreen('mobile') {
     inline-size: 100%;
@@ -121,9 +113,8 @@
 }
 
 .label {
-  inline-size: 100%;
-  padding    : var(--sp-small);
-    /* background-color: antiquewhite; */
+  inline-size    : 100%;
+  padding        : var(--sp-small);
   display        : flex;
   justify-content: space-between;
 }
@@ -168,6 +159,4 @@
   inline-size: 66.66666667%;
   border     : 1px solid var(--light-gray);
 }
-
-
 </style>

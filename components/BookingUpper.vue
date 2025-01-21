@@ -3,19 +3,18 @@ const clinicInfo = [
   {
     name: 'go-en.デンタルクリニック自由が丘',
     schedule: [
-      { day: '月曜日〜金曜日', time: '午前9:00〜 午後19:00' },
-      { day: '土曜日', time: '午前9:00〜 午後19:00' }
+      { day: '月曜日〜土曜日', time: '午前9:00〜午後19:00' },
+      // { day: '土曜日', time: '午前9:00〜 午後19:00' }
     ]
   },
   {
     name: 'さかもとクリニック',
     schedule: [
-      { day: '土曜日', time: '午前12:00〜 <br>午後15:00〜' }
+      { day: '土曜日', time: '午前12:00〜/<br>午後15:00〜' }
     ]
   }
 ]
 </script>
-
 
 <template>
   <div :class="$style.booking_upper_container">
@@ -67,25 +66,24 @@ const clinicInfo = [
 
   @include mediaScreen('mobile') {
     grid-template-columns: 1fr;
-    gap           : var(--sp-large);
+    gap                  : var(--sp-large);
   }
 }
 
 .table_wrapper {
-  /* inline-size: max(250px, 100%); */
   margin-block-start: var(--sp-large);
 }
 
 .table_title {
-  color      : var(--black);
-  font-size  : var(--fs-large);
-  font-weight: 500;
-  text-align : left;
+  color           : var(--black);
+  font-size       : var(--fs-large);
+  font-weight     : 500;
+  text-align      : left;
   margin-block-end: var(--sp-min);
 }
 
 .table  {
-  display: table;
+  display    : table;
   inline-size: 100%;
 
   th, td {
@@ -108,6 +106,4 @@ const clinicInfo = [
 .button {
   margin-inline: auto;
 } 
-
-
 </style>

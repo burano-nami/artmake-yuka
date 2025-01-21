@@ -1,8 +1,3 @@
-<!-- <script setup lang='ts'>
-
-
-</script> -->
-
 <template>
   <SectionContainer :class="$style.results_container">
     <SectionTitle
@@ -31,7 +26,7 @@
   flex-direction: column;
   align-items   : center;
   gap           : var(--sp-larger);
-  position: relative;
+  position      : relative;
 
 
   &::before {

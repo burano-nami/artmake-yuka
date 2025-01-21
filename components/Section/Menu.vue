@@ -53,8 +53,6 @@ const noteLists = [
   '他院での修正は基本的にお断りしていますが、カウンセリングの結果、施術が可能と判断した場合には対応させていただくこともあります。',
   '来院後に施術前キャンセルとなった場合には、対面カウンセリング料として3,000円を頂戴いたします。',
 ]
-
-
 </script>
 
 <template>
@@ -98,30 +96,30 @@ const noteLists = [
 
 .menu_container {
   max-inline-size: var(--contents-lower-width );
-  display: grid;
-  gap: var(--sp-larger);
-  position: relative;
+  display        : grid;
+  gap            : var(--sp-larger);
+  position       : relative;
 
   &::before,&::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 4px; /* ボーダーの高さ */
+    content   : '';
+    position  : absolute;
+    left      : 0;
+    width     : 100%;
+    height    : 4px;                                                             /* ボーダーの高さ */
     background: linear-gradient(267deg, #FBEDD7 0%, #CEA77E 50%, #A16231 100%);
-    display: block;
+    display   : block;
   }
 
   &::before {
-    top:var(--sp-medium);
+    top: var(--sp-medium);
   }
 
   &::after {
-    bottom:var(--sp-medium);
+    bottom: var(--sp-medium);
   }
 
   @include mediaScreen('tablet') {
-    margin-inline:var(--sp-large);
+    margin-inline: var(--sp-large);
   }
 }
 

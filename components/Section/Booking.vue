@@ -68,13 +68,13 @@ const isValid = computed(() => {
   flex-direction : column;
   align-items    : center;
   max-inline-size: var(--contents-max-width);
-  inline-size: 100%;
+  inline-size    : 100%;
 }
 
 .description {
   inline-size       : var(--contents-lower-width);
   margin-block-start: var(--sp-large);
-  inline-size: 100%;
+  inline-size       : 100%;
 
   @include mediaScreen('mobile') {
     inline-size: 100%;
@@ -84,11 +84,11 @@ const isValid = computed(() => {
 .description_booking {
   inline-size       : var(--contents-lower-width);
   margin-block-start: var(--sp-large);
-  text-align: center;
+  text-align        : center;
 
   @include mediaScreen('mobile') {
     inline-size: 100%;
-    text-align: left;
+    text-align : left;
   }
 }
 
@@ -99,10 +99,10 @@ const isValid = computed(() => {
 }
 
 .submit_wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--sp-large);
+  display           : flex;
+  flex-direction    : column;
+  align-items       : center;
+  gap               : var(--sp-large);
   margin-block-start: var(--sp-large);
 }
 
@@ -121,24 +121,24 @@ const isValid = computed(() => {
   font-weight: 500;
 }
 
-  /* ここからフォーム */
+    /* ここからフォーム */
 .form_container {
-  inline-size: 100%;
+  inline-size       : 100%;
   margin-block-start: var(--sp-large);
   gap               : var(--sp-medium);
 }
 
 .attention {
-  color      : var(--red);
-  font-size  : var(--fs-small);
-  text-align: center;
+  color       : var(--red);
+  font-size   : var(--fs-small);
+  text-align  : center;
   margin-block: var(--sp-small);
 }
 
 .consent {
-  display: flex;
+  display    : flex;
   align-items: center;
-  gap: var(--sp-small);
+  gap        : var(--sp-small);
 
   @include mediaScreen('mobile') {
     gap: var(--sp-medium);
@@ -146,11 +146,10 @@ const isValid = computed(() => {
 }
 
 .mobile_only {
-  display: none; 
+  display: none;
 
   @include mediaScreen('mobile') {
-    display: inline; 
+    display: inline;
   }
 }
-
 </style>
